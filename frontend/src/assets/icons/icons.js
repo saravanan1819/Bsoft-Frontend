@@ -1,5 +1,6 @@
 import LogoIcon from "./logo.svg";
 import MenuIcon from "./menu.svg";
+import MenuCollapseIcon from "./menu-collapse.svg";
 
 import DashboardIcon from "./dashboard.svg";
 import DashboardActiveIcon from "./dashboard-active.svg";
@@ -26,6 +27,9 @@ import HelpIcon from "./help.svg";
 import HelpActiveIcon from "./help-active.svg";
 import SettingsIcon from "./settings.svg";
 import SettingsActiveIcon from "./settings-active.svg";
+import TimerIcon from "./timer.svg";
+import UserIcon from "./user.svg";
+import ClockIcon from "./clock.svg";
 import LogoutIcon from "./logout.svg";
 import LogoutActiveIcon from "./logout-active.svg";
 
@@ -35,6 +39,7 @@ import ArrowDownIcon from "./arrow-down.svg";
 import ArrowUpIcon from "./arrow-up.svg";
 import Arrow1 from "./arrow1.svg";
 import Arrow1Black from "./arrow1-black.svg";
+import ArrowLeftIcon from "./arrow-left.svg";
 import CalculatorIcon from "./calculator.svg";
 
 import DayCellEmptyIcon from "./day-cell-empty.svg";
@@ -56,13 +61,14 @@ import ProfileIcon from "./profile-icon.svg";
 import SearchIcon from "./search-icon.svg";
 import TodoIcon from "./todo.svg";
 import ToolsIcon from "./tools.svg";
+import AboutLabIcon from "./about-lab.svg";
+import StartLabIcon from "./start-lab.svg";
 
 // New icons
 import ChecklistIcon from "./checklist.svg";
 import CodeIcon from "./code.svg";
 import DatabaseIcon from "./database.svg";
 import TerminalIcon from "./terminal.svg";
-import TimerIcon from "./timer.svg";
 
 // Recently added icons
 import DashboardEditIcon from "./dashboard-edit.svg";
@@ -83,8 +89,128 @@ import QuizCyanIcon from "./quiz-cyan.svg";
 import RecentActivityIcon from "./recent-activity.svg";
 
 import FolderIcon from "./folder.svg";
+import FolderClosed from "./folder-closed.svg";
+
+import CircleCheckIcon from "./circle-check.svg";
+import ClockFadingIcon from "./clock-fading.svg";
+import FlaskConicalIcon from "./flask-conical.svg";
+import InCompleteCircleIcon from "./in-complete-circle.svg";
+import LineDotRightHorizontalIcon from "./line-dot-right-horizontal.svg";
+import LockOutlineIcon from "./lock-outline.svg";
+import LockOutlineGrayIcon from "./lock-outline-gray.svg";
+import PdfIcon from "./pdf.svg";
+import PlayIcon from "./play.svg";
+import ReplayIcon from "./replay.svg";
+import SquareTerminalIcon from "./square-terminal.svg";
+import StarIcon from "./star.svg";
+import TrophyIcon from "./trophy.svg";
+import StatusIcon from "./status.svg";
+import ZoomSquareIcon from "./zoom-square.svg";
+import ExpandIcon from "./expand.svg";
+import GoldenStarIcon from "./golden-star.svg";
+import PagesIcon from "./pages.svg";
+import SquareLeftIcon from "./square-left.svg";
+import SquareNoteIcon from "./square-note.svg";
+import SquareRightIcon from "./square-right.svg";
+import ZoomInIcon from "./zoom-in.svg";
+import ZoomOutIcon from "./zoom-out.svg";
+import ClockTimerIcon from "./clock-timer.svg";
+import ZoomCircleIcon from "./zoom-circle.svg";
+import DigitalNomadIcon from "./digital-nomad-working-in-airport.svg";
+import LinkSquareIcon from "./link-square.svg";
+import NotesCollectionsIcon from "./notes-collections.svg";
+
+import AnswerBlackIcon from "./answer-black.svg";
+import CheckIcon from "./check.svg";
+import ChromeIcon from "./chrome.svg";
+import CircleQuestionMarkIcon from "./circle-question-mark.svg";
+import IdeaIcon from "./idea.svg";
+import QuestionBlackIcon from "./question-black.svg";
+import RefreshIcon from "./refresh.svg";
+import TasksIcon from "./tasks.svg";
+import TerminalSimpleIcon from "./terminal-simple.svg";
+import PreviousIcon from "./previous.svg";
+import NextIcon from "./next.svg";
+import CopyIcon from "./copy.svg";
+
+import DocResourceIcon from "./doc-resource.svg";
+import ExternalResourceIcon from "./external-resource.svg";
+import PdfResourceIcon from "./pdf-resource.svg";
+import VideoResourceIcon from "./video-ressource.svg";
+import NoResourcesIcon from "./no-resources.svg";
+import AnsweredIcon from "./answered.svg";
+import SkippedIcon from "./skipped.svg";
+import BookmarkIcon from "./bookmark.svg";
+import MenuSquareIcon from "./menu-square.svg";
+import MenuLineIcon from "./menu-line.svg";
+import EyeIcon from "./eye.svg";
+import AssessmentLockIcon from "./assessment-lock.svg";
+import AssessmentPassedIcon from "./assessment-passed.svg";
+import AssessmentReadyIcon from "./assessment-ready.svg";
+import AssessmentCompletedIcon from "./assessment-completed.svg";
+import AssessmentMissedIcon from "./assessment-missed.svg";
+import AssessmentNotPassedIcon from "./assessment-not-passed.svg";
+import CertificateLockIcon from "./certificate-lock.svg";
+import ShareIcon from "./share.svg";
+import DownloadIcon from "./download.svg";
+import TrophyStarIcon from "./trophy-star.svg";
+import TaskDoneIcon from "./task-done.svg";
+import InProgressIcon from "./in-progress.svg";
+import AiMagicIcon from "./ai-magic.svg";
+import FilterVerticalIcon from "./filter-vertical.svg";
+import AttendanceRateIcon from "./attendance-rate.svg";
+import PresentIcon from "./present.svg";
+import AbsentIcon from "./absent.svg";
+import ExportIcon from "./export.svg";
+import AttendanceHistoryIcon from "./attendance-history.svg";
+import DateRangeIcon from "./date-range.svg";
+import AllCoursesIcon from "./all-courses.svg";
+import CalendarTutorIcon from "./calender-tutor.svg";
+import CalendarRecallIcon from "./calender-recall.svg";
+import CalendarBashIcon from "./calender-bash.svg";
 
 export const Icons = {
+  calendarTutor: CalendarTutorIcon,
+  calendarRecall: CalendarRecallIcon,
+  calendarBash: CalendarBashIcon,
+  zoomCircle: ZoomCircleIcon,
+  zoomSquare: ZoomSquareIcon,
+  attendanceHistory: AttendanceHistoryIcon,
+  dateRange: DateRangeIcon,
+  allCourses: AllCoursesIcon,
+  attendanceRate: AttendanceRateIcon,
+  presentIcon: PresentIcon,
+  absentIcon: AbsentIcon,
+  exportIcon: ExportIcon,
+  filterVertical: FilterVerticalIcon,
+  taskDone: TaskDoneIcon,
+  inProgressIcon: InProgressIcon,
+  aiMagic: AiMagicIcon,
+  assessmentLock: AssessmentLockIcon,
+  assessmentPassed: AssessmentPassedIcon,
+  assessmentReady: AssessmentReadyIcon,
+  assessmentCompleted: AssessmentCompletedIcon,
+  assessmentMissed: AssessmentMissedIcon,
+  assessmentNotPassed: AssessmentNotPassedIcon,
+  certificateLock: CertificateLockIcon,
+  share: ShareIcon,
+  download: DownloadIcon,
+  copy: CopyIcon,
+  trophyStar: TrophyStarIcon,
+  menuSquare: MenuSquareIcon,
+  menuLine: MenuLineIcon,
+  eye: EyeIcon,
+  noResources: NoResourcesIcon,
+  docResource: DocResourceIcon,
+  externalResource: ExternalResourceIcon,
+  pdfResource: PdfResourceIcon,
+  videoResource: VideoResourceIcon,
+  copy: CopyIcon,
+  notesCollections: NotesCollectionsIcon,
+  clockTimer: ClockTimerIcon,
+  zoomCircle: ZoomCircleIcon,
+  digitalNomad: DigitalNomadIcon,
+  linkSquare: LinkSquareIcon,
   // Brand
   logo: LogoIcon,
   menu: MenuIcon,
@@ -144,6 +270,7 @@ export const Icons = {
   arrowUp: ArrowUpIcon,
   arrow1: Arrow1,
   arrow1Black: Arrow1Black,
+  arrowLeft: ArrowLeftIcon,
   openDropdown: OpenDropdownIcon,
   calculator: CalculatorIcon,
 
@@ -172,6 +299,54 @@ export const Icons = {
   quizCyan: QuizCyanIcon,
   recentActivity: RecentActivityIcon,
   folder: FolderIcon,
+  folderClosed: FolderClosed,
+
+  // Course Page Specific Icons
+  circleCheck: CircleCheckIcon,
+  clockFading: ClockFadingIcon,
+  flaskConical: FlaskConicalIcon,
+  inCompleteCircle: InCompleteCircleIcon,
+  lineDotRightHorizontal: LineDotRightHorizontalIcon,
+  lockOutline: LockOutlineIcon,
+  lockOutlineGray: LockOutlineGrayIcon,
+  pdf: PdfIcon,
+  play: PlayIcon,
+  replay: ReplayIcon,
+  squareTerminal: SquareTerminalIcon,
+  star: StarIcon,
+  trophy: TrophyIcon,
+  status: StatusIcon,
+  zoomSquare: ZoomSquareIcon,
+  expand: ExpandIcon,
+  goldenStar: GoldenStarIcon,
+  pages: PagesIcon,
+  squareLeft: SquareLeftIcon,
+  squareNote: SquareNoteIcon,
+  squareRight: SquareRightIcon,
+  zoomIn: ZoomInIcon,
+  zoomOut: ZoomOutIcon,
+  aboutLab: AboutLabIcon,
+  startLab: StartLabIcon,
+
+  // Lab Workspace Newly Added Icons
+  answerBlack: AnswerBlackIcon,
+  check: CheckIcon,
+  chrome: ChromeIcon,
+  circleQuestionMark: CircleQuestionMarkIcon,
+  idea: IdeaIcon,
+  questionBlack: QuestionBlackIcon,
+  refresh: RefreshIcon,
+  tasks: TasksIcon,
+  terminalSimple: TerminalSimpleIcon,
+  previous: PreviousIcon,
+  next: NextIcon,
+  answered: AnsweredIcon,
+  skipped: SkippedIcon,
+  bookmark: BookmarkIcon,
+  timer: TimerIcon,
+  user: UserIcon,
+  clock: ClockIcon,
+  menuCollapse: MenuCollapseIcon,
 };
 
 export default Icons;

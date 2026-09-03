@@ -49,10 +49,10 @@ export const CircularProgress = ({ percent = 0, label = "Completed" }) => {
       />
 
       <div className="absolute flex flex-col items-center justify-center">
-        <span className="font-sans font-medium text-[27px] leading-none text-black">
+        <span className="font-sans font-medium text-[24px] leading-none text-black">
           {safePercent} %
         </span>
-        <span className="font-sans font-light text-[12px] text-[#9B9B9B] mt-[2px]">
+        <span className="font-sans font-light text-[11px] text-[#9B9B9B] mt-[2px]">
           {label}
         </span>
       </div>

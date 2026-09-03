@@ -69,26 +69,26 @@ export const RecentActivityCard = () => {
   const currentList = activityItems[activeTab] || [];
 
   return (
-    <div className="w-full h-full bg-white border-[0.5px] border-[#B9BEC7] rounded-[24px] p-[24px] box-border flex flex-col gap-[16px]">
+    <div className="w-full h-full bg-white border-[0.5px] border-[#B9BEC7] rounded-[20px] p-[20px] box-border flex flex-col gap-[14px]">
       {/* Header */}
       <div className="flex items-center gap-[8px]">
-        <div className="w-[36px] h-[36px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0">
-          <img src={Icons.recentActivity} alt="Recent Activity" className="w-[18px] h-[18px]" />
+        <div className="w-[32px] h-[32px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0">
+          <img src={Icons.recentActivity} alt="Recent Activity" className="w-[16px] h-[16px]" />
         </div>
-        <h3 className="font-sans font-semibold text-[16px] text-black flex items-center gap-[6px]">
+        <h3 className="font-sans font-semibold text-[15px] text-black flex items-center gap-[5px]">
           Recent Activity
-          <img src={Icons.alertCircle} alt="Info" className="w-[15px] h-[15px] cursor-help opacity-70" />
+          <img src={Icons.alertCircle} alt="Info" className="w-[14px] h-[14px] cursor-help opacity-70" />
         </h3>
       </div>
 
       {/* Filter Tabs Capsule */}
-      <div className="w-full bg-[#F0F1F3] border-[0.5px] border-[#B9BEC7] rounded-full p-[4px] flex items-center justify-between box-border">
+      <div className="w-full bg-[#F0F1F3] border-[0.5px] border-[#B9BEC7] rounded-full p-[3px] flex items-center justify-between box-border">
         {["Today", "Yesterday", "This Week"].map((tab) => (
           <button
             key={tab}
             type="button"
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-[8px] text-center font-sans text-[14px] rounded-full transition-all duration-200 cursor-pointer ${
+            className={`flex-1 py-[6px] text-center font-sans text-[13px] rounded-full transition-all duration-200 cursor-pointer ${
               activeTab === tab
                 ? "bg-white text-black font-semibold border-[0.5px] border-[#B9BEC7] shadow-[0px_2px_4px_rgba(0,0,0,0.06)]"
                 : "text-[#6B7280] font-medium border border-transparent hover:text-black"
@@ -100,27 +100,27 @@ export const RecentActivityCard = () => {
       </div>
 
       {/* List */}
-      <div className="flex flex-col mt-[28px]">
+      <div className="flex flex-col mt-[20px]">
         {currentList.map((item, index) => (
           <React.Fragment key={item.id}>
-            {index > 0 && <div className="w-full h-[1px] bg-[#E5E7EB] my-[14px]" />}
-            <div className="flex items-center justify-between py-[4px]">
-              <div className="flex items-center gap-[14px]">
+            {index > 0 && <div className="w-full h-[1px] bg-[#E5E7EB] my-[10px]" />}
+            <div className="flex items-center justify-between py-[3px]">
+              <div className="flex items-center gap-[12px]">
                 {/* Colored Circle Background Container with scaled inner Icon */}
-                <div className={`w-[44px] h-[44px] rounded-full ${item.bgColor} flex items-center justify-center shrink-0`}>
-                  <img src={item.icon} alt={item.type} className="w-[22px] h-[22px]" />
+                <div className={`w-[38px] h-[38px] rounded-full ${item.bgColor} flex items-center justify-center shrink-0`}>
+                  <img src={item.icon} alt={item.type} className="w-[19px] h-[19px]" />
                 </div>
-                <div className="flex flex-col gap-[3px]">
-                  <span className="font-sans font-semibold text-[15px] text-black leading-tight">
+                <div className="flex flex-col gap-[2px]">
+                  <span className="font-sans font-semibold text-[14px] text-black leading-tight">
                     {item.title}
                   </span>
-                  <span className="font-sans font-normal text-[13px] text-[#6B7280] leading-tight">
+                  <span className="font-sans font-normal text-[12px] text-[#6B7280] leading-tight">
                     {item.subtitle}
                   </span>
                 </div>
               </div>
 
-              <span className="font-sans text-[13px] text-[#6B7280] shrink-0">
+              <span className="font-sans text-[12px] text-[#6B7280] shrink-0">
                 {item.time}
               </span>
             </div>

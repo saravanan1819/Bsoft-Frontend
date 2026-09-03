@@ -98,35 +98,35 @@ export const SkillGraphCard = ({ data = {}, onRefresh }) => {
   } = activeDataset;
 
   return (
-    <div className="w-full bg-white border-[0.5px] border-[#B9BEC7] rounded-[24px] p-[24px] box-border flex flex-col gap-[20px]">
+    <div className="w-full bg-white border-[0.5px] border-[#B9BEC7] rounded-[20px] p-[20px] box-border flex flex-col gap-[18px]">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-[8px]">
-          <div className="w-[36px] h-[36px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0">
-            <img src={Icons.learningConsistency} alt="Skill Graph" className="w-[18px] h-[18px]" />
+          <div className="w-[32px] h-[32px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0">
+            <img src={Icons.learningConsistency} alt="Skill Graph" className="w-[16px] h-[16px]" />
           </div>
-          <h3 className="font-sans font-semibold text-[16px] text-black flex items-center gap-[6px]">
+          <h3 className="font-sans font-semibold text-[15px] text-black flex items-center gap-[5px]">
             Skill Growth
             <img
               src={Icons.alertCircle}
               alt="Info"
-              className="w-[15px] h-[15px] cursor-help opacity-70"
+              className="w-[14px] h-[14px] cursor-help opacity-70"
             />
           </h3>
         </div>
 
         {/* Refresh + Toggle Switch */}
-        <div className="flex items-center gap-[10px]">
+        <div className="flex items-center gap-[8px]">
           <button
             type="button"
             onClick={handleRefresh}
             disabled={isRefreshing}
             aria-label="Refresh skill graph"
-            className="w-[32px] h-[32px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0 hover:bg-[#F4F4F5] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-[30px] h-[30px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center shrink-0 hover:bg-[#F4F4F5] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             <svg
-              width="15"
-              height="15"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#404040"
@@ -140,12 +140,12 @@ export const SkillGraphCard = ({ data = {}, onRefresh }) => {
             </svg>
           </button>
 
-          <div className="bg-[#F4F4F5] p-[3px] rounded-full flex items-center">
+          <div className="bg-[#F4F4F5] p-[2.5px] rounded-full flex items-center">
             {PERIOD_TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActivePeriod(tab.id)}
-                className={`px-[16px] py-[4px] text-[12px] font-medium rounded-full transition-all duration-200 ${
+                className={`px-[14px] py-[3.5px] text-[11.5px] font-medium rounded-full transition-all duration-200 cursor-pointer ${
                   activePeriod === tab.id
                     ? "bg-white text-black shadow-[0_1px_3px_rgba(0,0,0,0.1)]"
                     : "text-[#71717A] hover:text-black"
@@ -159,15 +159,15 @@ export const SkillGraphCard = ({ data = {}, onRefresh }) => {
       </div>
 
       {/* Metric Display */}
-      <div className="flex items-center gap-[12px] mt-[-4px]">
-        <span className="font-sans font-bold text-[32px] text-black leading-none">
+      <div className="flex items-center gap-[10px] mt-[-4px]">
+        <span className="font-sans font-bold text-[28px] text-black leading-none">
           {overallPercent} %
         </span>
-        <div className="flex items-center gap-[4px] h-[28px]">
+        <div className="flex items-center gap-[3.5px] h-[24px]">
           {indicatorBars.map((color, idx) => (
             <div
               key={idx}
-              className="w-[4px] h-[28px] rounded-full"
+              className="w-[3.5px] h-[24px] rounded-full"
               style={{ backgroundColor: color }}
             />
           ))}

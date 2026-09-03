@@ -58,18 +58,18 @@ const MilestoneNode = ({ label, status }) => {
 
   return (
     <div className="relative flex flex-col items-center shrink-0">
-      <div className={`w-[60px] h-[60px] rounded-full flex items-center justify-center ${config.outerClass}`}>
+      <div className={`w-[52px] h-[52px] rounded-full flex items-center justify-center ${config.outerClass}`}>
         {config.hasInnerCircle ? (
-          <div className={`w-[45px] h-[45px] rounded-full flex items-center justify-center ${config.innerClass}`}>
+          <div className={`w-[38px] h-[38px] rounded-full flex items-center justify-center ${config.innerClass}`}>
             <img src={config.icon} alt={config.statusLabel} className={config.iconClass} />
           </div>
         ) : (
           <img src={config.icon} alt={config.statusLabel} className={config.iconClass} />
         )}
       </div>
-      <div className="absolute top-[66px] flex flex-col items-center w-[100px]">
-        <span className="font-sans font-normal text-[12px] text-black leading-none">{label}</span>
-        <span className="font-sans font-light text-[10px] text-black mt-[4px]">
+      <div className="absolute top-[56px] flex flex-col items-center w-[90px]">
+        <span className="font-sans font-normal text-[11.5px] text-black leading-none">{label}</span>
+        <span className="font-sans font-light text-[10px] text-black mt-[3px]">
           {config.statusLabel}
         </span>
       </div>
@@ -82,10 +82,10 @@ const ConnectorLine = ({ currentStatus, nextStatus }) => {
 
   if (lineConfig.type === "dashed-fade") {
     return (
-      <div className="flex-1 h-[4px] flex items-center shrink-0 min-w-[30px] mx-[6px]">
-        <div className="w-[60%] h-[4px] rounded-full bg-primary" />
+      <div className="flex-1 h-[3.5px] flex items-center shrink-0 min-w-[24px] mx-[4px]">
+        <div className="w-[60%] h-[3.5px] rounded-full bg-primary" />
         <div
-          className="w-[40%] h-[4px] rounded-full"
+          className="w-[40%] h-[3.5px] rounded-full"
           style={{
             backgroundImage:
               "repeating-linear-gradient(135deg, #9AD84A, #9AD84A 2px, rgba(154, 216, 74, 0.2) 2px, rgba(154, 216, 74, 0.2) 6px)",
@@ -96,14 +96,14 @@ const ConnectorLine = ({ currentStatus, nextStatus }) => {
   }
 
   const solidColorClass = lineConfig.color === "primary" ? "bg-primary" : "bg-[#DEDEDE]";
-  return <div className={`flex-1 h-[4px] rounded-full ${solidColorClass} shrink-0 min-w-[30px] mx-[6px]`} />;
+  return <div className={`flex-1 h-[3.5px] rounded-full ${solidColorClass} shrink-0 min-w-[24px] mx-[4px]`} />;
 };
 
 
 export const MilestonePipeline = ({ milestones = [] }) => {
   return (
-    <div className="w-full h-[141px] bg-white border-[0.5px] border-[#B9BEC7] rounded-[20px] px-[24px] box-border flex items-start pt-[24px] justify-between mt-[15px] overflow-x-auto no-scrollbar">
-      <div className="flex items-center justify-between w-full min-w-[650px] h-[60px]">
+    <div className="w-full h-[125px] bg-white border-[0.5px] border-[#B9BEC7] rounded-[18px] px-[20px] box-border flex items-start pt-[20px] justify-between mt-[12px] overflow-x-auto no-scrollbar">
+      <div className="flex items-center justify-between w-full min-w-[600px] h-[52px]">
         {milestones.map((milestone, index) => {
           const nextMilestone = milestones[index + 1];
           return (

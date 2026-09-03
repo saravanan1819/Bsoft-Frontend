@@ -84,7 +84,9 @@ export const AppLayout = () => {
           </header>
 
           {/* Dynamic Page Content Area */}
-          <main className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar relative p-4 sm:p-6 md:p-8">
+          <main className={`flex-1 overflow-y-auto overflow-x-hidden no-scrollbar relative ${
+            location.pathname === "/calendar" ? "p-0 no-scrollbar" : "p-4 sm:p-6 md:p-8"
+          }`}>
             <Outlet context={{ isProfileOpen }} />
           </main>
         </div>
