@@ -144,6 +144,7 @@ import BookmarkIcon from "./bookmark.svg";
 import MenuSquareIcon from "./menu-square.svg";
 import MenuLineIcon from "./menu-line.svg";
 import EyeIcon from "./eye.svg";
+import EyeOffIcon from "./eye-off.svg";
 import AssessmentLockIcon from "./assessment-lock.svg";
 import AssessmentPassedIcon from "./assessment-passed.svg";
 import AssessmentReadyIcon from "./assessment-ready.svg";
@@ -200,6 +201,7 @@ export const Icons = {
   menuSquare: MenuSquareIcon,
   menuLine: MenuLineIcon,
   eye: EyeIcon,
+  eyeOff: EyeOffIcon,
   noResources: NoResourcesIcon,
   docResource: DocResourceIcon,
   externalResource: ExternalResourceIcon,

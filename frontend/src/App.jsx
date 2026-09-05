@@ -35,6 +35,8 @@ const PlaceholderPage = ({ title }) => (
 import CourseSessionDetailPage from "./modules/courses/course-session-detail.jsx";
 import CourseLabWorkspacePage from "./modules/courses/course-lab-workspace.jsx";
 import CourseQuizPage from "./modules/courses/course-quiz-page.jsx";
+import LoginPage from "./modules/auth/login.jsx";
+import FacultyLoginPage from "./modules/auth/faculty-login.jsx";
 
 // ---------------------------------------------------------
 // 3. Main App Routing
@@ -44,6 +46,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Full screen route without layout (no sidebar / topbar) */}
+        <Route path="login" element={<LoginPage />} />
+        <Route path="faculty-login" element={<FacultyLoginPage />} />
         <Route path="courses/session/:sessionId" element={<CourseSessionDetailPage />} />
         <Route path="courses/session/:sessionId/lab/:labId" element={<CourseLabWorkspacePage />} />
         <Route path="courses/session/:sessionId/quiz/:quizId" element={<CourseQuizPage />} />
