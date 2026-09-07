@@ -136,15 +136,12 @@ const FacultyLoginPage = () => {
                   </button>
                 </div>
                 <div className="flex justify-end mt-1.5">
-                  <a
-                    href="#forgot-password"
-                    onClick={(e) => {
-                      e.preventDefault();
-                    }}
+                  <Link
+                    to="/forgot-password"
                     className="text-[14px] font-medium text-[#0D99FF] hover:underline"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
 

@@ -1,14 +1,15 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Icons } from "../../assets/icons/icons.js";
 
 // Master dataset of events tied to actual dates (YYYY-MM-DD)
 const allEventsDatabase = [
   {
     id: "live-session-1",
-    date: "2026-07-01", // Wednesday 01 July 2026
-    startHour: 1.0, // 01:00 AM
-    endHour: 2.5, // 02:30 AM (1.5 hours)
-    timeRange: "01.00 - 02.30",
+    date: "2026-07-01",
+    dayIndex: 1, // Column 1 (Mon/Wed)
+    startHour: 10.0, // 10:00 AM
+    endHour: 11.5, // 11:30 AM
+    timeRange: "10.00 - 11.30",
     statusBadge: "UpComing",
     dayBadgeNumber: "25",
     monthName: "JULY",
@@ -17,7 +18,7 @@ const allEventsDatabase = [
     subtitle: "Week2 - Session 1",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Tuesday, 05 July 2026",
-    fullTimeText: "10.00 AM - 11.00 AM",
+    fullTimeText: "10.00 AM - 11.30 AM",
     facultyName: "Mr. Arun Kumar",
     description: "Join the live session to learn about core security principle.",
     actionText: "Join Live Session",
@@ -33,10 +34,11 @@ const allEventsDatabase = [
   },
   {
     id: "recall-quiz-1",
-    date: "2026-07-02", // Thursday 02 July 2026
-    startHour: 3.0, // 03:00 AM
-    endHour: 3.5, // 03:30 AM
-    timeRange: "03.00 - 03.30",
+    date: "2026-07-02",
+    dayIndex: 2, // Column 2 (Tue/Thu)
+    startHour: 11.5, // 11:30 AM
+    endHour: 12.0, // 12:00 PM
+    timeRange: "11.30 - 12.00",
     statusBadge: "UpComing",
     dayBadgeNumber: "02",
     monthName: "JULY",
@@ -45,7 +47,7 @@ const allEventsDatabase = [
     subtitle: "Week 1 - Quiz",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Thursday, 02 July 2026",
-    fullTimeText: "03.00 AM - 03.30 AM",
+    fullTimeText: "11.30 AM - 12.00 PM",
     facultyName: "Mr. Arun Kumar",
     description: "Complete the recall quiz to test your understanding of Linux fundamentals.",
     actionText: "Start Quiz",
@@ -61,10 +63,11 @@ const allEventsDatabase = [
   },
   {
     id: "tutor-meeting-1",
-    date: "2026-07-03", // Friday 03 July 2026
-    startHour: 1.0, // 01:00 AM
-    endHour: 1.5, // 01:30 AM
-    timeRange: "01.00 - 01.30",
+    date: "2026-07-03",
+    dayIndex: 3, // Column 3 (Wed/Fri)
+    startHour: 10.0, // 10:00 AM
+    endHour: 10.5, // 10:30 AM
+    timeRange: "10.00 - 10.30",
     statusBadge: "Scheduled",
     dayBadgeNumber: "03",
     monthName: "JULY",
@@ -73,7 +76,7 @@ const allEventsDatabase = [
     subtitle: "Session 1",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Friday, 03 July 2026",
-    fullTimeText: "01.00 AM - 01.30 AM",
+    fullTimeText: "10.00 AM - 10.30 AM",
     facultyName: "Saravanan",
     description: "1-on-1 tutoring session to review lab assignments and Q&A.",
     actionText: "Join Meeting",
@@ -89,10 +92,11 @@ const allEventsDatabase = [
   },
   {
     id: "hands-on-lab-1",
-    date: "2026-07-05", // Sunday 05 July 2026
-    startHour: 1.5, // 01:30 AM
-    endHour: 2.5, // 02:30 AM
-    timeRange: "01.30 - 02.30",
+    date: "2026-07-05",
+    dayIndex: 5, // Column 5 (Sun)
+    startHour: 12.5, // 12:30 PM
+    endHour: 13.5, // 01:30 PM
+    timeRange: "12.30 - 01.30",
     statusBadge: "In Progress",
     dayBadgeNumber: "05",
     monthName: "JULY",
@@ -101,7 +105,7 @@ const allEventsDatabase = [
     subtitle: "Linux File Permission",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Sunday, 05 July 2026",
-    fullTimeText: "01.30 AM - 02.30 AM",
+    fullTimeText: "12.30 PM - 01.30 PM",
     facultyName: "Mr. Arun Kumar",
     description: "Practice configuring file permissions and user access rights in guided terminal sandbox.",
     actionText: "Launch Lab Workspace",
@@ -126,12 +130,82 @@ function formatYYYYMMDD(d) {
 }
 
 export default function CalendarPage() {
-  // Current active reference date (Default: July 5, 2026 matching screenshot)
-  const [currentDate, setCurrentDate] = useState(new Date("2026-07-05T00:00:00"));
+  // Current active reference date (Default: system real-time date)
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [activeTab, setActiveTab] = useState("Week"); // "Day", "Week", "Month"
+  const [isDateDropdownOpen, setIsDateDropdownOpen] = useState(false);
+  const dateDropdownRef = useRef(null);
 
-  // Selected Event state for the Right Drawer Sidebar (Defaults to null so it stays closed until an event is clicked)
+  // Selected Event state for the Right Drawer Sidebar
   const [selectedEvent, setSelectedEvent] = useState(null);
+
+  // Dynamic system time ticker state
+  const [nowTime, setNowTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setNowTime(new Date()), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Compute dynamic hours range centered around current time
+  const { startHour, hoursList } = useMemo(() => {
+    const curHour = nowTime.getHours();
+    const start = Math.max(7, Math.min(14, curHour - 1));
+    const list = [];
+    for (let i = 0; i < 7; i++) {
+      const h = (start + i) % 24;
+      const ampm = h >= 12 ? "PM" : "AM";
+      const displayH = h % 12 === 0 ? 12 : h % 12;
+      list.push({ hourNum: h, label: `${displayH}${ampm}` });
+    }
+    return { startHour: start, hoursList: list };
+  }, [nowTime]);
+
+  // Current time position & label calculation
+  const currentDecimalHour = nowTime.getHours() + nowTime.getMinutes() / 60;
+  const isRedLineInView = currentDecimalHour >= startHour && currentDecimalHour <= startHour + 7;
+  const redLineTopPx = Math.round((currentDecimalHour - startHour) * 80);
+  const formattedCurrentTime = nowTime.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  }).replace(" ", "");
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dateDropdownRef.current && !dateDropdownRef.current.contains(event.target)) {
+        setIsDateDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Mini Calendar Viewport Month state inside popover
+  const [pickerMonth, setPickerMonth] = useState(new Date("2026-07-01T00:00:00"));
+
+  // Keep pickerMonth in sync with currentDate when popover opens
+  useEffect(() => {
+    if (isDateDropdownOpen) {
+      setPickerMonth(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1));
+    }
+  }, [isDateDropdownOpen, currentDate]);
+
+  // Mini calendar grid calculations
+  const miniCalendarData = useMemo(() => {
+    const year = pickerMonth.getFullYear();
+    const month = pickerMonth.getMonth();
+    const firstDayOfWeek = new Date(year, month, 1).getDay(); // 0 = Sun
+    const totalDays = new Date(year, month + 1, 0).getDate();
+
+    const blanks = Array.from({ length: firstDayOfWeek });
+    const days = Array.from({ length: totalDays }, (_, i) => i + 1);
+
+    const monthName = pickerMonth.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+    return { year, month, blanks, days, monthName };
+  }, [pickerMonth]);
 
   // 1. Calculate all 7 Days of the active week
   const weekDays = useMemo(() => {
@@ -199,36 +273,144 @@ export default function CalendarPage() {
     year: "numeric",
   });
 
-  // Hours rows 1AM to 7AM
-  const hours = ["1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM"];
+  // Hours rows starting from current evening 7PM range onwards
+  const hours = ["7PM", "8PM", "9PM", "10PM", "11PM", "12AM", "1AM"];
 
   return (
     <div className="w-full flex-1 bg-white font-sans flex flex-col lg:flex-row items-stretch min-h-full">
       
       {/* LEFT CALENDAR GRID FRAME CONTAINER */}
-      <div className="flex-1 w-full bg-white border-[0.7px] border-[#B9BEC7] rounded-[24px] overflow-hidden flex flex-col shadow-sm my-[24px] ml-[24px] mr-[28px]">
+      <div className="flex-1 min-w-0 w-full bg-white flex flex-col mt-[8px] mb-[24px] ml-[24px] mr-[16px] lg:mr-[24px]">
         
         {/* Calendar Top Navigation Header Bar */}
-        <div className="px-[20px] md:px-[24px] py-[16px] border-b-[0.5px] border-[#B9BEC7] flex flex-wrap items-center justify-between gap-[16px]">
+        <div className="px-[20px] md:px-[24px] pt-[6px] pb-[12px] flex flex-wrap items-center justify-between gap-[16px]">
           {/* Month & Date Selector */}
           <div className="flex items-center gap-[12px]">
             <h1 className="font-sans font-medium text-[22px] text-[#000000]">
               {monthYearTitle}
             </h1>
 
-            {/* Dynamic Date Picker Input Pill */}
-            <div className="relative">
-              <label className="flex items-center gap-[8px] border-[0.5px] border-[#B9BEC7] bg-white hover:bg-[#F9FAFB] text-[#374151] px-[12px] py-[6px] rounded-[10px] text-[13.5px] font-medium transition-colors cursor-pointer">
+            {/* Dynamic Interactive Date Picker Dropdown */}
+            <div className="relative z-30" ref={dateDropdownRef}>
+              <button
+                type="button"
+                onClick={() => setIsDateDropdownOpen((prev) => !prev)}
+                className="flex items-center gap-[8px] border-[0.5px] border-[#B9BEC7] bg-white hover:bg-[#F9FAFB] text-[#374151] px-[12px] py-[6px] rounded-[10px] text-[13.5px] font-medium transition-colors cursor-pointer"
+              >
                 <img src={Icons.dateRange} alt="Date" className="w-[15px] h-[15px]" />
                 <span>{selectedDateLabel}</span>
-                <img src={Icons.openDropdown} alt="Dropdown" className="w-[12px] h-[12px] opacity-60 ml-[2px]" />
-                <input
-                  type="date"
-                  value={formatYYYYMMDD(currentDate)}
-                  onChange={handleDateChange}
-                  className="absolute inset-0 opacity-0 cursor-pointer"
+                <img
+                  src={Icons.openDropdown}
+                  alt="Dropdown"
+                  className={`w-[12px] h-[12px] opacity-60 ml-[2px] transition-transform duration-200 ${
+                    isDateDropdownOpen ? "rotate-180" : ""
+                  }`}
                 />
-              </label>
+              </button>
+
+              {/* Date Dropdown Mini Calendar Popover */}
+              {isDateDropdownOpen && (
+                <div className="absolute top-full left-0 mt-[8px] w-[290px] bg-white border border-[#B9BEC7] rounded-[20px] shadow-xl p-[16px] z-50 flex flex-col gap-[12px]">
+                  {/* Popover Month Header & Controls */}
+                  <div className="flex items-center justify-between px-[4px]">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setPickerMonth(
+                          new Date(miniCalendarData.year, miniCalendarData.month - 1, 1)
+                        )
+                      }
+                      className="w-[28px] h-[28px] rounded-full border border-[#B9BEC7] flex items-center justify-center text-[#374151] hover:bg-[#F3F4F6] cursor-pointer text-[14px]"
+                    >
+                      ‹
+                    </button>
+                    <span className="font-sans font-semibold text-[14px] text-[#000000]">
+                      {miniCalendarData.monthName}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setPickerMonth(
+                          new Date(miniCalendarData.year, miniCalendarData.month + 1, 1)
+                        )
+                      }
+                      className="w-[28px] h-[28px] rounded-full border border-[#B9BEC7] flex items-center justify-center text-[#374151] hover:bg-[#F3F4F6] cursor-pointer text-[14px]"
+                    >
+                      ›
+                    </button>
+                  </div>
+
+                  {/* Days of Week Header Row */}
+                  <div className="grid grid-cols-7 text-center font-sans font-medium text-[11px] text-[#737373]">
+                    {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((dayName) => (
+                      <div key={dayName} className="py-1">
+                        {dayName}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Calendar Grid 7 Columns */}
+                  <div className="grid grid-cols-7 text-center gap-y-[4px]">
+                    {miniCalendarData.blanks.map((_, idx) => (
+                      <div key={`blank-${idx}`} className="w-[32px] h-[32px]" />
+                    ))}
+
+                    {miniCalendarData.days.map((dayNum) => {
+                      const dayDate = new Date(
+                        miniCalendarData.year,
+                        miniCalendarData.month,
+                        dayNum
+                      );
+                      const dateStr = formatYYYYMMDD(dayDate);
+                      const isSelected = dateStr === formatYYYYMMDD(currentDate);
+                      const hasEvent = allEventsDatabase.some(
+                        (ev) => ev.date === dateStr
+                      );
+
+                      return (
+                        <button
+                          key={dayNum}
+                          type="button"
+                          onClick={() => {
+                            setCurrentDate(dayDate);
+                            setIsDateDropdownOpen(false);
+                          }}
+                          className={`w-[32px] h-[32px] mx-auto rounded-full font-sans text-[12px] flex flex-col items-center justify-center relative transition-all cursor-pointer ${
+                            isSelected
+                              ? "bg-[#9AD84A] text-white font-semibold shadow-xs"
+                              : "text-[#000000] hover:bg-[#F3F4F6] font-normal"
+                          }`}
+                        >
+                          <span>{dayNum}</span>
+                          {hasEvent && (
+                            <span
+                              className={`w-[4px] h-[4px] rounded-full absolute bottom-[3px] ${
+                                isSelected ? "bg-white" : "bg-[#9AD84A]"
+                              }`}
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Quick Select Today Footer */}
+                  <div className="border-t border-[#E5E7EB] pt-[10px] flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const todayDate = new Date("2026-07-05T00:00:00");
+                        setCurrentDate(todayDate);
+                        setPickerMonth(new Date(2026, 6, 1));
+                        setIsDateDropdownOpen(false);
+                      }}
+                      className="text-[12px] font-sans font-medium text-[#737373] hover:text-black cursor-pointer"
+                    >
+                      Reset to 05 July 2026
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -280,8 +462,9 @@ export default function CalendarPage() {
         </div>
 
         {/* Calendar Grid View Container */}
-        <div className="w-full overflow-x-auto no-scrollbar">
-          <div className="min-w-[1050px] flex flex-col">
+        <div className="w-full border border-[#B9BEC7] rounded-[15px] overflow-hidden bg-white flex flex-col">
+          <div className="w-full overflow-x-auto no-scrollbar">
+            <div className="min-w-[1050px] flex flex-col">
             {/* Days Header Row */}
             <div className="grid grid-cols-8 border-b-[0.5px] border-[#B9BEC7] bg-white text-center">
               {/* GMT Timezone Label (regular 12px #000000) */}
@@ -289,7 +472,7 @@ export default function CalendarPage() {
                 GMT+05.30
               </div>
 
-              {/* Days Columns */}
+              {/* Days Columns Header */}
               {weekDays.map(({ date: dayDate, dayNum }) => {
                 const dateStr = formatYYYYMMDD(dayDate);
                 const isSelected = dateStr === formatYYYYMMDD(currentDate);
@@ -302,7 +485,9 @@ export default function CalendarPage() {
                   <div
                     key={dateStr}
                     onClick={() => setCurrentDate(dayDate)}
-                    className="py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] last:border-r-0 font-sans font-normal text-[14px] text-[#000000] flex items-center justify-center cursor-pointer transition-colors bg-white hover:bg-gray-50"
+                    className={`py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] last:border-r-0 font-sans text-[14px] flex items-center justify-center cursor-pointer transition-colors duration-300 ease-in-out ${
+                      isSelected ? "bg-[#F7FBEB] font-semibold text-[#000000]" : "bg-white font-normal text-[#000000] hover:bg-gray-50"
+                    }`}
                   >
                     {formattedLabel}
                   </div>
@@ -312,22 +497,27 @@ export default function CalendarPage() {
 
             {/* Time Slots & Days Grid Matrix */}
             <div className="relative grid grid-cols-8">
-              {/* Red Current Time Line Indicator at 2.50 AM (only if today is selected) */}
-              <div className="absolute top-[175px] left-0 right-0 z-10 flex items-center pointer-events-none">
-                <span className="bg-[#FF383C] text-white text-[10px] font-semibold px-[6px] py-[2px] rounded-[4px] ml-[6px] shadow-xs">
-                  2.50AM
-                </span>
-                <div className="flex-1 h-[1.5px] bg-[#FF383C]/70" />
-              </div>
+              {/* Red Current Time Line Indicator dynamically positioned */}
+              {isRedLineInView && (
+                <div
+                  style={{ top: `${redLineTopPx}px` }}
+                  className="absolute left-0 right-0 z-10 flex items-center pointer-events-none transition-all duration-500"
+                >
+                  <span className="bg-[#FF383C] text-white text-[10px] font-semibold px-[6px] py-[2px] rounded-[4px] ml-[6px] shadow-xs">
+                    {formattedCurrentTime}
+                  </span>
+                  <div className="flex-1 h-[1.5px] bg-[#FF383C]/70" />
+                </div>
+              )}
 
-              {/* Column 1: Hours Column (1AM - 7AM, regular 14px #000000) */}
+              {/* Column 1: Hours Column */}
               <div className="border-r-[0.5px] border-[#B9BEC7] flex flex-col bg-white">
-                {hours.map((hour) => (
+                {hoursList.map(({ hourNum, label }) => (
                   <div
-                    key={hour}
+                    key={hourNum}
                     className="h-[80px] flex items-center justify-center font-sans font-normal text-[14px] text-[#000000]"
                   >
-                    {hour}
+                    {label}
                   </div>
                 ))}
               </div>
@@ -343,26 +533,29 @@ export default function CalendarPage() {
                 return (
                   <div
                     key={dateStr}
-                    className={`relative border-r-[0.5px] border-[#B9BEC7] last:border-r-0 flex flex-col ${
-                      isSelected ? "bg-[#FDFEEF]/60" : "bg-white"
+                    onClick={() => setCurrentDate(dayDate)}
+                    className={`relative border-r-[0.5px] border-[#B9BEC7] last:border-r-0 flex flex-col cursor-pointer transition-colors duration-300 ease-in-out ${
+                      isSelected ? "bg-[#F7FBEB]" : "bg-white"
                     }`}
                   >
-                    {/* Active Day Top Green Accent Bar (#9BD94A) under header border */}
-                    {isSelected && (
-                      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#9BD94A] z-10" />
-                    )}
+                    {/* Active Day Top Green Accent Bar (#9BD94A) */}
+                    <div
+                      className={`absolute top-0 left-0 right-0 h-[3px] bg-[#9BD94A] z-10 transition-all duration-300 ease-in-out ${
+                        isSelected ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                      }`}
+                    />
 
                     {/* Background Hour Grid Slots */}
-                    {hours.map((hour) => (
+                    {hoursList.map(({ hourNum }) => (
                       <div
-                        key={hour}
+                        key={hourNum}
                         className="h-[80px] border-b-[0.5px] border-[#B9BEC7]/60 last:border-b-0"
                       />
                     ))}
 
                     {/* Positioned Events Cards in this column */}
                     {dayEvents.map((event) => {
-                      const topPx = Math.round((event.startHour - 1.0) * 80) + 10;
+                      const topPx = Math.round((event.startHour - startHour) * 80) + 10;
                       const durationHours = event.endHour - event.startHour;
                       const heightPx = Math.max(145, Math.round(durationHours * 110));
                       const isCurrentlySelected = selectedEvent?.id === event.id;
@@ -439,6 +632,7 @@ export default function CalendarPage() {
           </div>
         </div>
       </div>
+    </div>
 
       {/* RIGHT SIDEBAR PANEL matching event.png */}
       {selectedEvent && (

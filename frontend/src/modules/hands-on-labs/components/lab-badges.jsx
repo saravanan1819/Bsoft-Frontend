@@ -9,13 +9,13 @@ export const StatusBadge = ({ status }) => {
         return "bg-[#DCFCE7] text-[#22C55E]";
       case "Not Started":
       default:
-        return "bg-[#DCFCE7] text-[#22C55E]";
+        return "bg-[#FFEDD5] text-[#F97316]";
     }
   };
 
   return (
     <span
-      className={`px-[10px] py-[3px] rounded-[8px] text-[12px] font-normal inline-block ${getStyle(
+      className={`px-[10px] py-[3px] rounded-[10px] text-[12px] font-normal inline-block ${getStyle(
         status
       )}`}
     >
@@ -41,7 +41,7 @@ export const DifficultyBadge = ({ difficulty }) => {
 
   return (
     <span
-      className={`px-[10px] py-[3px] rounded-[8px] text-[12px] font-normal inline-block ${getStyle(
+      className={`px-[10px] py-[3px] rounded-[10px] text-[12px] font-normal inline-block ${getStyle(
         difficulty
       )}`}
     >

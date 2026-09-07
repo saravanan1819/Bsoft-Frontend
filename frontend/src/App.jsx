@@ -20,6 +20,7 @@ const DummyPage = ({ title }) => {
 // ---------------------------------------------------------
 // Replaced with import from @/features/dashboard
 import CoursesPage from "./modules/courses/courses.jsx";
+import CourseListPage from "./modules/courses/course-list.jsx";
 import HandsOnLabsPage from "./modules/hands-on-labs/hands-on-labs.jsx";
 import AttendancePage from "./modules/attendance/attendance.jsx";
 import CalendarPage from "./modules/calendar/calendar.jsx";
@@ -37,6 +38,7 @@ import CourseLabWorkspacePage from "./modules/courses/course-lab-workspace.jsx";
 import CourseQuizPage from "./modules/courses/course-quiz-page.jsx";
 import LoginPage from "./modules/auth/login.jsx";
 import FacultyLoginPage from "./modules/auth/faculty-login.jsx";
+import ForgotPasswordPage from "./modules/auth/forgot-password.jsx";
 
 // ---------------------------------------------------------
 // 3. Main App Routing
@@ -48,6 +50,7 @@ function App() {
         {/* Full screen route without layout (no sidebar / topbar) */}
         <Route path="login" element={<LoginPage />} />
         <Route path="faculty-login" element={<FacultyLoginPage />} />
+        <Route path="forgot-password" element={<ForgotPasswordPage />} />
         <Route path="courses/session/:sessionId" element={<CourseSessionDetailPage />} />
         <Route path="courses/session/:sessionId/lab/:labId" element={<CourseLabWorkspacePage />} />
         <Route path="courses/session/:sessionId/quiz/:quizId" element={<CourseQuizPage />} />
@@ -60,7 +63,9 @@ function App() {
           
           {/* Main Section */}
           <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="courses" element={<CoursesPage />} />
+          <Route path="courses" element={<CourseListPage />} />
+          <Route path="courses/detail" element={<CoursesPage />} />
+          <Route path="courses/:courseId" element={<CoursesPage />} />
           <Route path="hands-on-labs" element={<HandsOnLabsPage />} />
           <Route path="challenges" element={<DummyPage title="Challenges" />} />
 

@@ -120,6 +120,14 @@ export const CoursesPage = () => {
           {/* Header Title & Badges Row */}
           <div className="px-[26px] md:px-[30px] pb-[18px] border-b-[0.5px] border-[#B9BEC7] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-[16px]">
             <div>
+              <button
+                type="button"
+                onClick={() => navigate("/courses")}
+                className="inline-flex items-center gap-1.5 text-[#737373] hover:text-black font-sans font-medium text-[14px] mb-2 transition-colors cursor-pointer"
+              >
+                <span>&larr;</span>
+                <span>Back to Courses</span>
+              </button>
               <h1 className="font-sans font-semibold text-[22px] text-[#000000] leading-normal">
                 {title}
               </h1>

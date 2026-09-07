@@ -59,6 +59,7 @@ import NotificationBellPingIcon from "./notification-bell-ping.svg";
 import OpenDropdownIcon from "./open-dropdown.svg";
 import ProfileIcon from "./profile-icon.svg";
 import SearchIcon from "./search-icon.svg";
+import SearchBoldIcon from "./search-bold.svg";
 import TodoIcon from "./todo.svg";
 import ToolsIcon from "./tools.svg";
 import AboutLabIcon from "./about-lab.svg";
@@ -158,6 +159,7 @@ import TrophyStarIcon from "./trophy-star.svg";
 import TaskDoneIcon from "./task-done.svg";
 import InProgressIcon from "./in-progress.svg";
 import AiMagicIcon from "./ai-magic.svg";
+import AiInsightsGradientIcon from "./ai-insights-gradient.svg";
 import FilterVerticalIcon from "./filter-vertical.svg";
 import AttendanceRateIcon from "./attendance-rate.svg";
 import PresentIcon from "./present.svg";
@@ -169,8 +171,10 @@ import AllCoursesIcon from "./all-courses.svg";
 import CalendarTutorIcon from "./calender-tutor.svg";
 import CalendarRecallIcon from "./calender-recall.svg";
 import CalendarBashIcon from "./calender-bash.svg";
+import NoItemIcon from "./no-item.svg";
 
 export const Icons = {
+  noItem: NoItemIcon,
   calendarTutor: CalendarTutorIcon,
   calendarRecall: CalendarRecallIcon,
   calendarBash: CalendarBashIcon,
@@ -187,6 +191,7 @@ export const Icons = {
   taskDone: TaskDoneIcon,
   inProgressIcon: InProgressIcon,
   aiMagic: AiMagicIcon,
+  aiInsightsGradient: AiInsightsGradientIcon,
   assessmentLock: AssessmentLockIcon,
   assessmentPassed: AssessmentPassedIcon,
   assessmentReady: AssessmentReadyIcon,
@@ -202,6 +207,7 @@ export const Icons = {
   menuLine: MenuLineIcon,
   eye: EyeIcon,
   eyeOff: EyeOffIcon,
+  refresh: RefreshIcon,
   noResources: NoResourcesIcon,
   docResource: DocResourceIcon,
   externalResource: ExternalResourceIcon,
@@ -267,6 +273,7 @@ export const Icons = {
   notification: NotificationBellPingIcon,
   profile: ProfileIcon,
   search: SearchIcon,
+  searchBold: SearchBoldIcon,
   alertCircle: AlertCircleIcon,
   arrowDown: ArrowDownIcon,
   arrowUp: ArrowUpIcon,
