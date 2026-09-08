@@ -39,6 +39,8 @@ import CourseQuizPage from "./modules/courses/course-quiz-page.jsx";
 import LoginPage from "./modules/auth/login.jsx";
 import FacultyLoginPage from "./modules/auth/faculty-login.jsx";
 import ForgotPasswordPage from "./modules/auth/forgot-password.jsx";
+import WelcomePage from "./modules/auth/welcome.jsx";
+import CreateProfilePage from "./modules/auth/create-profile.jsx";
 
 // ---------------------------------------------------------
 // 3. Main App Routing
@@ -60,6 +62,8 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           {/* Default redirect to Dashboard */}
           <Route index element={<Navigate to="/dashboard" replace />} />
+          <Route path="welcome" element={<WelcomePage />} />
+          <Route path="create-profile" element={<CreateProfilePage />} />
           
           {/* Main Section */}
           <Route path="dashboard" element={<DashboardPage />} />
@@ -81,7 +85,7 @@ function App() {
           <Route path="help-support" element={<DummyPage title="Help & Support" />} />
 
           {/* Account Section */}
-          <Route path="logout" element={<DummyPage title="Logging Out..." />} />
+          <Route path="logout" element={<Navigate to="/login" replace />} />
           
           {/* 404 Catch-all */}
           <Route path="*" element={<DummyPage title="404 - Page Not Found" />} />

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Icons } from "../../assets/icons/icons.js";
 import { sidebarMenu } from "../../config/sidebar.js"; 
 
-export const Sidebar = ({ forceCollapsed, onClose, isMobileDrawer }) => {
+export const Sidebar = ({ forceCollapsed, onClose, isMobileDrawer, isEmpty }) => {
   const [internalCollapsed, setInternalCollapsed] = React.useState(false);
   const isCollapsed = !isMobileDrawer && (forceCollapsed !== undefined ? (forceCollapsed || internalCollapsed) : internalCollapsed);
 
@@ -40,8 +40,11 @@ export const Sidebar = ({ forceCollapsed, onClose, isMobileDrawer }) => {
         )}
       </div>
 
-      {/* Whole Scrollable Sidebar Container */}
-      <div className="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-[28px] pb-[36px]">
+      {isEmpty ? (
+        <div className="flex-1" />
+      ) : (
+        /* Whole Scrollable Sidebar Container */
+        <div className="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-[28px] pb-[36px]">
         {/* Mode switcher (Learn) */}
         <button className={`${isCollapsed ? "w-[48px] justify-center p-0 mx-auto" : "w-full px-[16px] justify-between"} h-[40px] shrink-0 bg-secondary text-white rounded-[10px] flex items-center hover:opacity-90 mt-[20px] cursor-pointer outline-none border-none transition-all duration-300`}>
           <div className="flex items-center gap-[10px]">
@@ -186,6 +189,7 @@ export const Sidebar = ({ forceCollapsed, onClose, isMobileDrawer }) => {
           </div>
         )}
       </div>
+      )}
     </aside>
   );
 };

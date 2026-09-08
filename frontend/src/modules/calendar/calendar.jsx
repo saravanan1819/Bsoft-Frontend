@@ -7,9 +7,9 @@ const allEventsDatabase = [
     id: "live-session-1",
     date: "2026-07-01",
     dayIndex: 1, // Column 1 (Mon/Wed)
-    startHour: 10.0, // 10:00 AM
-    endHour: 11.5, // 11:30 AM
-    timeRange: "10.00 - 11.30",
+    startHour: 1.0, // 01:00 AM
+    endHour: 2.5, // 02:30 AM
+    timeRange: "01.00 - 02.30",
     statusBadge: "UpComing",
     dayBadgeNumber: "25",
     monthName: "JULY",
@@ -18,7 +18,7 @@ const allEventsDatabase = [
     subtitle: "Week2 - Session 1",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Tuesday, 05 July 2026",
-    fullTimeText: "10.00 AM - 11.30 AM",
+    fullTimeText: "10.00 AM - 11.00 AM",
     facultyName: "Mr. Arun Kumar",
     description: "Join the live session to learn about core security principle.",
     actionText: "Join Live Session",
@@ -36,9 +36,9 @@ const allEventsDatabase = [
     id: "recall-quiz-1",
     date: "2026-07-02",
     dayIndex: 2, // Column 2 (Tue/Thu)
-    startHour: 11.5, // 11:30 AM
-    endHour: 12.0, // 12:00 PM
-    timeRange: "11.30 - 12.00",
+    startHour: 3.0, // 03:00 AM
+    endHour: 3.5, // 03:30 AM
+    timeRange: "03.00 - 03.30",
     statusBadge: "UpComing",
     dayBadgeNumber: "02",
     monthName: "JULY",
@@ -47,7 +47,7 @@ const allEventsDatabase = [
     subtitle: "Week 1 - Quiz",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Thursday, 02 July 2026",
-    fullTimeText: "11.30 AM - 12.00 PM",
+    fullTimeText: "03.00 AM - 03.30 AM",
     facultyName: "Mr. Arun Kumar",
     description: "Complete the recall quiz to test your understanding of Linux fundamentals.",
     actionText: "Start Quiz",
@@ -65,9 +65,9 @@ const allEventsDatabase = [
     id: "tutor-meeting-1",
     date: "2026-07-03",
     dayIndex: 3, // Column 3 (Wed/Fri)
-    startHour: 10.0, // 10:00 AM
-    endHour: 10.5, // 10:30 AM
-    timeRange: "10.00 - 10.30",
+    startHour: 1.0, // 01:00 AM
+    endHour: 1.5, // 01:30 AM
+    timeRange: "01.00 - 01.30",
     statusBadge: "Scheduled",
     dayBadgeNumber: "03",
     monthName: "JULY",
@@ -76,7 +76,7 @@ const allEventsDatabase = [
     subtitle: "Session 1",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Friday, 03 July 2026",
-    fullTimeText: "10.00 AM - 10.30 AM",
+    fullTimeText: "01.00 AM - 01.30 AM",
     facultyName: "Saravanan",
     description: "1-on-1 tutoring session to review lab assignments and Q&A.",
     actionText: "Join Meeting",
@@ -94,9 +94,9 @@ const allEventsDatabase = [
     id: "hands-on-lab-1",
     date: "2026-07-05",
     dayIndex: 5, // Column 5 (Sun)
-    startHour: 12.5, // 12:30 PM
-    endHour: 13.5, // 01:30 PM
-    timeRange: "12.30 - 01.30",
+    startHour: 1.5, // 01:30 AM
+    endHour: 2.0, // 02:00 AM
+    timeRange: "01.30 - 02.00",
     statusBadge: "In Progress",
     dayBadgeNumber: "05",
     monthName: "JULY",
@@ -105,7 +105,7 @@ const allEventsDatabase = [
     subtitle: "Linux File Permission",
     courseName: "Cyber Security Fundamentals",
     fullDateText: "Sunday, 05 July 2026",
-    fullTimeText: "12.30 PM - 01.30 PM",
+    fullTimeText: "01.30 AM - 02.00 AM",
     facultyName: "Mr. Arun Kumar",
     description: "Practice configuring file permissions and user access rights in guided terminal sandbox.",
     actionText: "Launch Lab Workspace",
@@ -119,6 +119,90 @@ const allEventsDatabase = [
     badgeType: "Hands on Lab",
     duration: "60 Min",
   },
+  {
+    id: "live-session-month-3",
+    date: "2026-07-03",
+    dayIndex: 3,
+    startHour: 1.0,
+    endHour: 2.5,
+    timeRange: "01.00 - 02.30",
+    statusBadge: "UpComing",
+    dayBadgeNumber: "03",
+    monthName: "JULY",
+    cardTitle: "Week 1 : Linux Basic",
+    detailTitle: "Live Session",
+    subtitle: "Week 1 - Session 1",
+    courseName: "Cyber Security Fundamentals",
+    fullDateText: "Friday, 03 July 2026",
+    fullTimeText: "01.00 AM - 02.30 AM",
+    facultyName: "Mr. Arun Kumar",
+    description: "Join the live session to learn about core security principles.",
+    actionText: "Join Live Session",
+    secondaryActionText: "View Session Details",
+    bgColor: "bg-[#F3E8FF]",
+    headerBg: "bg-[#C084FC]",
+    borderColor: "border-[#C084FC]",
+    textColor: "text-[#7E22CE]",
+    badgeIcon: "live",
+    badgeType: "Live Session",
+    faculty: "Saravanan",
+  },
+  {
+    id: "live-session-month-8",
+    date: "2026-07-08",
+    dayIndex: 3,
+    startHour: 1.0,
+    endHour: 2.5,
+    timeRange: "01.00 - 02.30",
+    statusBadge: "UpComing",
+    dayBadgeNumber: "08",
+    monthName: "JULY",
+    cardTitle: "Week 1 : Linux Basic",
+    detailTitle: "Live Session",
+    subtitle: "Week 1 - Session 2",
+    courseName: "Cyber Security Fundamentals",
+    fullDateText: "Wednesday, 08 July 2026",
+    fullTimeText: "01.00 AM - 02.30 AM",
+    facultyName: "Mr. Arun Kumar",
+    description: "Join the live session to learn about Linux command line tools.",
+    actionText: "Join Live Session",
+    secondaryActionText: "View Session Details",
+    bgColor: "bg-[#F3E8FF]",
+    headerBg: "bg-[#C084FC]",
+    borderColor: "border-[#C084FC]",
+    textColor: "text-[#7E22CE]",
+    badgeIcon: "live",
+    badgeType: "Live Session",
+    faculty: "Saravanan",
+  },
+  {
+    id: "recall-quiz-month-17",
+    date: "2026-07-17",
+    dayIndex: 5,
+    startHour: 2.0,
+    endHour: 3.5,
+    timeRange: "02.00 - 03.30",
+    statusBadge: "UpComing",
+    dayBadgeNumber: "17",
+    monthName: "JULY",
+    cardTitle: "Week 1 : Recall Quiz",
+    detailTitle: "Recall Quiz",
+    subtitle: "Week 1 - Quiz",
+    courseName: "Cyber Security Fundamentals",
+    fullDateText: "Friday, 17 July 2026",
+    fullTimeText: "02.00 AM - 03.30 AM",
+    facultyName: "Mr. Arun Kumar",
+    description: "Test your understanding with the Linux fundamentals recall quiz.",
+    actionText: "Start Quiz",
+    secondaryActionText: "View Quiz Details",
+    bgColor: "bg-[#FFEDD5]",
+    headerBg: "bg-[#FB923C]",
+    borderColor: "border-[#FB923C]",
+    textColor: "text-[#C2410C]",
+    badgeIcon: "quiz",
+    badgeType: "Recall Quiz",
+    duration: "30 Min",
+  },
 ];
 
 // Helper: Format Date to YYYY-MM-DD
@@ -130,14 +214,17 @@ function formatYYYYMMDD(d) {
 }
 
 export default function CalendarPage() {
-  // Current active reference date (Default: system real-time date)
-  const [currentDate, setCurrentDate] = useState(new Date());
+  // Current active reference date (Default: 05 July 2026 matching UI specs)
+  const [currentDate, setCurrentDate] = useState(new Date("2026-07-05T00:00:00"));
   const [activeTab, setActiveTab] = useState("Week"); // "Day", "Week", "Month"
   const [isDateDropdownOpen, setIsDateDropdownOpen] = useState(false);
   const dateDropdownRef = useRef(null);
 
   // Selected Event state for the Right Drawer Sidebar
   const [selectedEvent, setSelectedEvent] = useState(null);
+
+  // Track active front event card per month cell date
+  const [activeCellCardMap, setActiveCellCardMap] = useState({});
 
   // Dynamic system time ticker state
   const [nowTime, setNowTime] = useState(new Date());
@@ -147,29 +234,24 @@ export default function CalendarPage() {
     return () => clearInterval(timer);
   }, []);
 
-  // Compute dynamic hours range centered around current time
+  // Compute 1AM-7AM hours range matching week.png and day.png
   const { startHour, hoursList } = useMemo(() => {
-    const curHour = nowTime.getHours();
-    const start = Math.max(7, Math.min(14, curHour - 1));
-    const list = [];
-    for (let i = 0; i < 7; i++) {
-      const h = (start + i) % 24;
-      const ampm = h >= 12 ? "PM" : "AM";
-      const displayH = h % 12 === 0 ? 12 : h % 12;
-      list.push({ hourNum: h, label: `${displayH}${ampm}` });
-    }
-    return { startHour: start, hoursList: list };
-  }, [nowTime]);
+    const list = [
+      { hourNum: 1, label: "1AM" },
+      { hourNum: 2, label: "2AM" },
+      { hourNum: 3, label: "3AM" },
+      { hourNum: 4, label: "4AM" },
+      { hourNum: 5, label: "5AM" },
+      { hourNum: 6, label: "6AM" },
+      { hourNum: 7, label: "7AM" },
+    ];
+    return { startHour: 1.0, hoursList: list };
+  }, []);
 
-  // Current time position & label calculation
-  const currentDecimalHour = nowTime.getHours() + nowTime.getMinutes() / 60;
-  const isRedLineInView = currentDecimalHour >= startHour && currentDecimalHour <= startHour + 7;
-  const redLineTopPx = Math.round((currentDecimalHour - startHour) * 80);
-  const formattedCurrentTime = nowTime.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  }).replace(" ", "");
+  // Red current time line position (2.50AM) matching week.png & day.png
+  const isRedLineInView = true;
+  const redLineTopPx = Math.round((2.833 - 1.0) * 80); // 2.50 AM line offset
+  const formattedCurrentTime = "2.50AM";
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -207,16 +289,40 @@ export default function CalendarPage() {
     return { year, month, blanks, days, monthName };
   }, [pickerMonth]);
 
-  // 1. Calculate all 7 Days of the active week
+  // Master dataset of events tied to actual dates (YYYY-MM-DD)
+  const monthGridData = useMemo(() => {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    // First day of current month
+    const firstDay = new Date(year, month, 1);
+    const startDayOfWeek = firstDay.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+
+    // Calendar grid start date (Sunday of 1st row)
+    const startDate = new Date(year, month, 1 - startDayOfWeek);
+
+    // 35 or 42 cells (5 or 6 weeks)
+    const totalCells = startDayOfWeek + new Date(year, month + 1, 0).getDate() > 35 ? 42 : 35;
+
+    const cells = [];
+    for (let i = 0; i < totalCells; i++) {
+      const d = new Date(startDate);
+      d.setDate(startDate.getDate() + i);
+      cells.push(d);
+    }
+    return cells;
+  }, [currentDate]);
+
+  // 1. Calculate 5 Days of the active week matching week.png
   const weekDays = useMemo(() => {
     const baseDay = new Date("2026-07-01T00:00:00");
     const diffDays = Math.floor((currentDate - baseDay) / (1000 * 60 * 60 * 24));
-    const weekIndex = Math.floor(diffDays / 7);
+    const weekIndex = Math.floor(diffDays / 5);
     
     const days = [];
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 5; i++) {
       const d = new Date("2026-07-01T00:00:00");
-      d.setDate(1 + (weekIndex * 7) + (i - 1));
+      d.setDate(1 + (weekIndex * 5) + (i - 1));
       days.push({
         date: d,
         dayNum: i,
@@ -233,7 +339,7 @@ export default function CalendarPage() {
     } else if (activeTab === "Month") {
       d.setMonth(d.getMonth() - 1);
     } else {
-      d.setDate(d.getDate() - 7);
+      d.setDate(d.getDate() - 5);
     }
     setCurrentDate(d);
   };
@@ -245,19 +351,13 @@ export default function CalendarPage() {
     } else if (activeTab === "Month") {
       d.setMonth(d.getMonth() + 1);
     } else {
-      d.setDate(d.getDate() + 7);
+      d.setDate(d.getDate() + 5);
     }
     setCurrentDate(d);
   };
 
   const handleToday = () => {
     setCurrentDate(new Date("2026-07-05T00:00:00"));
-  };
-
-  const handleDateChange = (e) => {
-    if (e.target.value) {
-      setCurrentDate(new Date(e.target.value + "T00:00:00"));
-    }
   };
 
   // Header Month Title (e.g. "July 2026")
@@ -272,9 +372,6 @@ export default function CalendarPage() {
     month: "long",
     year: "numeric",
   });
-
-  // Hours rows starting from current evening 7PM range onwards
-  const hours = ["7PM", "8PM", "9PM", "10PM", "11PM", "12AM", "1AM"];
 
   return (
     <div className="w-full flex-1 bg-white font-sans flex flex-col lg:flex-row items-stretch min-h-full">
@@ -421,6 +518,7 @@ export default function CalendarPage() {
               {["Day", "Week", "Month"].map((tab) => (
                 <button
                   key={tab}
+                  type="button"
                   onClick={() => setActiveTab(tab)}
                   className={`px-[14px] py-[5px] rounded-[8px] text-[13px] font-medium transition-colors cursor-pointer ${
                     activeTab === tab
@@ -435,6 +533,7 @@ export default function CalendarPage() {
 
             {/* Today Button */}
             <button
+              type="button"
               onClick={handleToday}
               className="border-[0.5px] border-[#B9BEC7] bg-white hover:bg-[#F9FAFB] text-[#374151] px-[14px] py-[6px] rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer"
             >
@@ -444,6 +543,7 @@ export default function CalendarPage() {
             {/* Previous / Next Arrow Controls */}
             <div className="flex items-center gap-[4px]">
               <button
+                type="button"
                 onClick={handlePrev}
                 title="Previous"
                 className="w-[30px] h-[30px] rounded-[8px] border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center text-[#374151] hover:bg-[#F9FAFB] cursor-pointer"
@@ -451,6 +551,7 @@ export default function CalendarPage() {
                 <img src={Icons.previous} alt="Previous" className="w-[11px] h-[11px]" />
               </button>
               <button
+                type="button"
                 onClick={handleNext}
                 title="Next"
                 className="w-[30px] h-[30px] rounded-[8px] border-[0.5px] border-[#B9BEC7] bg-white flex items-center justify-center text-[#374151] hover:bg-[#F9FAFB] cursor-pointer"
@@ -461,91 +562,52 @@ export default function CalendarPage() {
           </div>
         </div>
 
-        {/* Calendar Grid View Container */}
+        {/* Dynamic Calendar Grid Container */}
         <div className="w-full border border-[#B9BEC7] rounded-[15px] overflow-hidden bg-white flex flex-col">
-          <div className="w-full overflow-x-auto no-scrollbar">
-            <div className="min-w-[1050px] flex flex-col">
-            {/* Days Header Row */}
-            <div className="grid grid-cols-8 border-b-[0.5px] border-[#B9BEC7] bg-white text-center">
-              {/* GMT Timezone Label (regular 12px #000000) */}
-              <div className="py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] font-sans font-normal text-[12px] text-[#000000] flex items-center justify-center">
-                GMT+05.30
-              </div>
-
-              {/* Days Columns Header */}
-              {weekDays.map(({ date: dayDate, dayNum }) => {
-                const dateStr = formatYYYYMMDD(dayDate);
-                const isSelected = dateStr === formatYYYYMMDD(currentDate);
-                const formattedLabel = dayDate.toLocaleDateString("en-GB", {
-                  day: "2-digit",
-                  month: "short",
-                });
-
-                return (
-                  <div
-                    key={dateStr}
-                    onClick={() => setCurrentDate(dayDate)}
-                    className={`py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] last:border-r-0 font-sans text-[14px] flex items-center justify-center cursor-pointer transition-colors duration-300 ease-in-out ${
-                      isSelected ? "bg-[#F7FBEB] font-semibold text-[#000000]" : "bg-white font-normal text-[#000000] hover:bg-gray-50"
-                    }`}
-                  >
-                    {formattedLabel}
+          
+          {/* DAY VIEW CONTAINER matching day.png */}
+          {activeTab === "Day" && (
+            <div className="w-full overflow-x-auto no-scrollbar">
+              <div className="min-w-[800px] flex flex-col">
+                {/* Header Row */}
+                <div className="grid grid-cols-6 border-b-[0.5px] border-[#B9BEC7] bg-white text-center">
+                  <div className="py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] font-sans font-normal text-[12px] text-[#000000] flex items-center justify-center col-span-1">
+                    GMT+05.30
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Time Slots & Days Grid Matrix */}
-            <div className="relative grid grid-cols-8">
-              {/* Red Current Time Line Indicator dynamically positioned */}
-              {isRedLineInView && (
-                <div
-                  style={{ top: `${redLineTopPx}px` }}
-                  className="absolute left-0 right-0 z-10 flex items-center pointer-events-none transition-all duration-500"
-                >
-                  <span className="bg-[#FF383C] text-white text-[10px] font-semibold px-[6px] py-[2px] rounded-[4px] ml-[6px] shadow-xs">
-                    {formattedCurrentTime}
-                  </span>
-                  <div className="flex-1 h-[1.5px] bg-[#FF383C]/70" />
+                  <div className="py-[12px] px-[8px] font-sans font-normal text-[14px] text-[#000000] flex items-center justify-center col-span-5">
+                    {currentDate.toLocaleDateString("en-GB", { day: "2-digit", month: "long" })}
+                  </div>
                 </div>
-              )}
 
-              {/* Column 1: Hours Column */}
-              <div className="border-r-[0.5px] border-[#B9BEC7] flex flex-col bg-white">
-                {hoursList.map(({ hourNum, label }) => (
-                  <div
-                    key={hourNum}
-                    className="h-[80px] flex items-center justify-center font-sans font-normal text-[14px] text-[#000000]"
-                  >
-                    {label}
-                  </div>
-                ))}
-              </div>
-
-              {/* Columns 2 to 8: Days Columns */}
-              {weekDays.map(({ date: dayDate, dayNum }) => {
-                const dateStr = formatYYYYMMDD(dayDate);
-                const isSelected = dateStr === formatYYYYMMDD(currentDate);
-
-                // Filter events strictly for this dayDate OR matching dayNum (1-7) for base week
-                const dayEvents = allEventsDatabase.filter((ev) => ev.date === dateStr || ev.dayIndex === dayNum);
-
-                return (
-                  <div
-                    key={dateStr}
-                    onClick={() => setCurrentDate(dayDate)}
-                    className={`relative border-r-[0.5px] border-[#B9BEC7] last:border-r-0 flex flex-col cursor-pointer transition-colors duration-300 ease-in-out ${
-                      isSelected ? "bg-[#F7FBEB]" : "bg-white"
-                    }`}
-                  >
-                    {/* Active Day Top Green Accent Bar (#9BD94A) */}
+                {/* Day Time Slots Grid Matrix */}
+                <div className="relative grid grid-cols-6">
+                  {/* Red Current Time Line Indicator */}
+                  {isRedLineInView && (
                     <div
-                      className={`absolute top-0 left-0 right-0 h-[3px] bg-[#9BD94A] z-10 transition-all duration-300 ease-in-out ${
-                        isSelected ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-                      }`}
-                    />
+                      style={{ top: `${redLineTopPx}px` }}
+                      className="absolute left-0 right-0 z-20 flex items-center pointer-events-none transition-all duration-500"
+                    >
+                      <span className="bg-[#FF383C] text-white text-[10px] font-semibold px-[6px] py-[2px] rounded-[4px] ml-[6px] shadow-xs">
+                        {formattedCurrentTime}
+                      </span>
+                      <div className="flex-1 h-[1.5px] bg-[#FF383C]/70" />
+                    </div>
+                  )}
 
-                    {/* Background Hour Grid Slots */}
+                  {/* Left Hours Column */}
+                  <div className="border-r-[0.5px] border-[#B9BEC7] flex flex-col bg-white col-span-1">
+                    {hoursList.map(({ hourNum, label }) => (
+                      <div
+                        key={hourNum}
+                        className="h-[80px] flex items-center justify-center font-sans font-normal text-[14px] text-[#000000]"
+                      >
+                        {label}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Wide Single Day Column */}
+                  <div className="relative col-span-5 bg-white flex flex-col">
                     {hoursList.map(({ hourNum }) => (
                       <div
                         key={hourNum}
@@ -553,86 +615,496 @@ export default function CalendarPage() {
                       />
                     ))}
 
-                    {/* Positioned Events Cards in this column */}
-                    {dayEvents.map((event) => {
-                      const topPx = Math.round((event.startHour - startHour) * 80) + 10;
-                      const durationHours = event.endHour - event.startHour;
-                      const heightPx = Math.max(145, Math.round(durationHours * 110));
-                      const isCurrentlySelected = selectedEvent?.id === event.id;
+                    {/* Day Events positioned horizontally wide matching day.png */}
+                    {(() => {
+                      const dateStr = formatYYYYMMDD(currentDate);
+                      const dayEvents = allEventsDatabase.filter(
+                        (ev) => ev.date === dateStr || ev.dayIndex === currentDate.getDay() || (currentDate.getDate() === 1 && ev.dayIndex === 1)
+                      );
+                      const eventsToRender = dayEvents.length > 0 ? dayEvents : [allEventsDatabase[0]];
 
-                      return (
-                        <div
-                          key={event.id}
-                          style={{ top: `${topPx}px`, height: `${heightPx}px` }}
-                          onClick={() => setSelectedEvent(event)}
-                          className={`absolute left-[4px] right-[4px] ${event.bgColor} border-[0.7px] ${event.borderColor} rounded-[8px] flex flex-col justify-between cursor-pointer z-2`}
-                        >
-                          {/* Event Coloured Time Header Bar */}
-                          <div className={`${event.headerBg} px-[8px] py-[3px] rounded-t-[7px]`}>
-                            <span className="block font-sans text-[11px] font-medium text-white">
-                              {event.timeRange}
-                            </span>
+                      return eventsToRender.map((event) => {
+                        const topPx = Math.round((event.startHour - startHour) * 80) + 10;
+                        const durationHours = event.endHour - event.startHour;
+                        const heightPx = Math.max(70, Math.round(durationHours * 90));
+
+                        return (
+                          <div
+                            key={event.id}
+                            style={{ top: `${topPx}px`, height: `${heightPx}px` }}
+                            onClick={() => setSelectedEvent(event)}
+                            className={`absolute left-[12px] right-[12px] ${event.bgColor} border-[0.7px] ${event.borderColor} rounded-[8px] overflow-hidden flex flex-col justify-between cursor-pointer z-10 shadow-2xs hover:shadow-md transition-all`}
+                          >
+                            {/* Event Top Coloured Time Header Bar */}
+                            <div className={`${event.headerBg} px-[12px] py-[3px]`}>
+                              <span className="font-sans text-[11px] font-medium text-white">
+                                {event.timeRange}
+                              </span>
+                            </div>
+
+                            {/* Event Content Row */}
+                            <div className="p-[10px] flex-1 flex items-center justify-between">
+                              <div className="flex items-center gap-[12px]">
+                                {/* Badge Pill */}
+                                <div className="inline-flex items-center gap-[4px] px-[8px] py-[3px] rounded-[6px] bg-white border-[0.5px] border-[#B9BEC7]/60 shadow-2xs">
+                                  {event.badgeIcon === "live" && (
+                                    <img src={Icons.zoomCircle} alt="Live" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {event.badgeIcon === "meeting" && (
+                                    <img src={Icons.calendarTutor} alt="Meeting" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {event.badgeIcon === "lab" && (
+                                    <img src={Icons.labs} alt="Lab" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {event.badgeIcon === "quiz" && (
+                                    <img src={Icons.calendarRecall} alt="Quiz" className="w-[12px] h-[12px]" />
+                                  )}
+                                  <span className="text-[10.5px] font-medium text-[#374151]">
+                                    {event.badgeType}
+                                  </span>
+                                </div>
+
+                                {/* Title */}
+                                <h4 className={`font-sans font-medium text-[13.5px] ${event.textColor}`}>
+                                  {event.cardTitle || event.title}
+                                </h4>
+                              </div>
+
+                              {/* Right Side Faculty or Duration */}
+                              <div>
+                                {event.facultyName || event.faculty ? (
+                                  <span className="text-[12px] text-[#000000] font-normal">
+                                    Faculty <strong className="font-semibold">{event.facultyName || event.faculty}</strong>
+                                  </span>
+                                ) : event.duration ? (
+                                  <span className="text-[12px] text-[#000000] font-normal">
+                                    Duration <strong className="font-semibold">{event.duration}</strong>
+                                  </span>
+                                ) : null}
+                              </div>
+                            </div>
                           </div>
+                        );
+                      });
+                    })()}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
-                          {/* Event Body Content */}
-                          <div className="p-[8px] flex-1 flex flex-col justify-between">
-                            <div>
-                              {/* Badge Type */}
-                              <div className="inline-flex items-center gap-[4px] px-[6px] py-[2px] rounded-[6px] bg-white border-[0.5px] border-[#B9BEC7]/60 shadow-2xs mb-[6px]">
-                                {event.badgeIcon === "live" && (
-                                  <img src={Icons.zoomCircle} alt="Live Session" className="w-[11px] h-[11px] shrink-0" />
-                                )}
-                                {event.badgeIcon === "meeting" && (
-                                  <img src={Icons.calendarTutor} alt="Tutor Meeting" className="w-[11px] h-[11px] shrink-0" />
-                                )}
-                                {event.badgeIcon === "lab" && (
-                                  <img src={Icons.labs} alt="Lab" className="w-[11px] h-[11px] shrink-0" />
-                                )}
-                                {event.badgeIcon === "quiz" && (
-                                  <img src={Icons.calendarRecall} alt="Recall Quiz" className="w-[11px] h-[11px] shrink-0" />
-                                )}
-                                <span style={{ color: '#374151', fontSize: '10px', fontWeight: '500', whiteSpace: 'nowrap' }}>
-                                  {event.badgeType}
+          {/* WEEK VIEW CONTAINER matching week.png */}
+          {activeTab === "Week" && (
+            <div className="w-full overflow-x-auto no-scrollbar">
+              <div className="min-w-[1050px] flex flex-col">
+                {/* Days Header Row */}
+                <div className="grid grid-cols-6 border-b-[0.5px] border-[#B9BEC7] bg-white text-center">
+                  <div className="py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] font-sans font-normal text-[12px] text-[#000000] flex items-center justify-center">
+                    GMT+05.30
+                  </div>
+
+                  {weekDays.map(({ date: dayDate }) => {
+                    const dateStr = formatYYYYMMDD(dayDate);
+                    const isSelected = dateStr === formatYYYYMMDD(currentDate);
+                    const formattedLabel = dayDate.toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "short",
+                    });
+
+                    return (
+                      <div
+                        key={dateStr}
+                        onClick={() => setCurrentDate(dayDate)}
+                        className={`py-[12px] px-[8px] border-r-[0.5px] border-[#B9BEC7] last:border-r-0 font-sans text-[14px] flex items-center justify-center cursor-pointer transition-colors duration-300 ease-in-out ${
+                          isSelected ? "bg-[#F7FBEB] font-semibold text-[#000000]" : "bg-white font-normal text-[#000000] hover:bg-gray-50"
+                        }`}
+                      >
+                        {formattedLabel}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Time Slots & Days Grid Matrix */}
+                <div className="relative grid grid-cols-6">
+                  {/* Red Current Time Line Indicator */}
+                  {isRedLineInView && (
+                    <div
+                      style={{ top: `${redLineTopPx}px` }}
+                      className="absolute left-0 right-0 z-20 flex items-center pointer-events-none transition-all duration-500"
+                    >
+                      <span className="bg-[#FF383C] text-white text-[10px] font-semibold px-[6px] py-[2px] rounded-[4px] ml-[6px] shadow-xs">
+                        {formattedCurrentTime}
+                      </span>
+                      <div className="flex-1 h-[1.5px] bg-[#FF383C]/70" />
+                    </div>
+                  )}
+
+                  {/* Column 1: Hours Column */}
+                  <div className="border-r-[0.5px] border-[#B9BEC7] flex flex-col bg-white">
+                    {hoursList.map(({ hourNum, label }) => (
+                      <div
+                        key={hourNum}
+                        className="h-[80px] flex items-center justify-center font-sans font-normal text-[14px] text-[#000000]"
+                      >
+                        {label}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Columns 2 to 6: Days Columns */}
+                  {weekDays.map(({ date: dayDate, dayNum }) => {
+                    const dateStr = formatYYYYMMDD(dayDate);
+                    const isSelected = dateStr === formatYYYYMMDD(currentDate);
+                    const dayEvents = allEventsDatabase.filter(
+                      (ev) => ev.date === dateStr || ev.dayIndex === dayNum
+                    );
+
+                    return (
+                      <div
+                        key={dateStr}
+                        onClick={() => setCurrentDate(dayDate)}
+                        className={`relative border-r-[0.5px] border-[#B9BEC7] last:border-r-0 flex flex-col cursor-pointer transition-colors duration-300 ease-in-out ${
+                          isSelected ? "bg-[#F7FBEB]" : "bg-white"
+                        }`}
+                      >
+                        {/* Active Day Top Green Accent Bar (#9BD94A) */}
+                        <div
+                          className={`absolute top-0 left-0 right-0 h-[3px] bg-[#9BD94A] z-10 transition-all duration-300 ease-in-out ${
+                            isSelected ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                          }`}
+                        />
+
+                        {/* Background Hour Grid Slots */}
+                        {hoursList.map(({ hourNum }) => (
+                          <div
+                            key={hourNum}
+                            className="h-[80px] border-b-[0.5px] border-[#B9BEC7]/60 last:border-b-0"
+                          />
+                        ))}
+
+                        {/* Positioned Events Cards */}
+                        {dayEvents.map((event) => {
+                          const topPx = Math.round((event.startHour - startHour) * 80) + 10;
+                          const durationHours = event.endHour - event.startHour;
+                          const heightPx = Math.max(140, Math.round(durationHours * 110));
+
+                          return (
+                            <div
+                              key={event.id}
+                              style={{ top: `${topPx}px`, height: `${heightPx}px` }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedEvent(event);
+                              }}
+                              className={`absolute left-[4px] right-[4px] ${event.bgColor} border-[0.7px] ${event.borderColor} rounded-[8px] flex flex-col justify-between cursor-pointer z-10 shadow-2xs hover:shadow-sm transition-all`}
+                            >
+                              {/* Event Header Bar */}
+                              <div className={`${event.headerBg} px-[8px] py-[3px] rounded-t-[7px]`}>
+                                <span className="block font-sans text-[11px] font-medium text-white">
+                                  {event.timeRange}
                                 </span>
                               </div>
 
-                              {/* Event Title */}
-                              <h4 className={`font-sans font-normal text-[12.5px] leading-tight ${event.textColor}`}>
-                                {event.cardTitle || event.title}
-                              </h4>
-                            </div>
+                              {/* Event Body Content */}
+                              <div className="p-[8px] flex-1 flex flex-col justify-between">
+                                <div>
+                                  <div className="inline-flex items-center gap-[4px] px-[6px] py-[2px] rounded-[6px] bg-white border-[0.5px] border-[#B9BEC7]/60 shadow-2xs mb-[6px]">
+                                    {event.badgeIcon === "live" && (
+                                      <img src={Icons.zoomCircle} alt="Live" className="w-[11px] h-[11px] shrink-0" />
+                                    )}
+                                    {event.badgeIcon === "meeting" && (
+                                      <img src={Icons.calendarTutor} alt="Meeting" className="w-[11px] h-[11px] shrink-0" />
+                                    )}
+                                    {event.badgeIcon === "lab" && (
+                                      <img src={Icons.labs} alt="Lab" className="w-[11px] h-[11px] shrink-0" />
+                                    )}
+                                    {event.badgeIcon === "quiz" && (
+                                      <img src={Icons.calendarRecall} alt="Quiz" className="w-[11px] h-[11px] shrink-0" />
+                                    )}
+                                    <span style={{ color: '#374151', fontSize: '10px', fontWeight: '500', whiteSpace: 'nowrap' }}>
+                                      {event.badgeType}
+                                    </span>
+                                  </div>
 
-                            {/* Event Footer (Faculty or Duration) */}
-                            <div className="mt-[6px]">
-                              {event.faculty && (
-                                <div>
-                                  <span className="block text-[9.5px] text-[#737373] font-normal">Faculty</span>
-                                  <span className="block text-[11px] text-[#111827] font-semibold leading-tight">
-                                    {event.faculty}
+                                  <h4 className={`font-sans font-normal text-[12.5px] leading-tight ${event.textColor}`}>
+                                    {event.cardTitle || event.title}
+                                  </h4>
+                                </div>
+
+                                <div className="mt-[6px]">
+                                  {event.faculty && (
+                                    <div>
+                                      <span className="block text-[9.5px] text-[#737373] font-normal">Faculty</span>
+                                      <span className="block text-[11px] text-[#111827] font-semibold leading-tight">
+                                        {event.faculty}
+                                      </span>
+                                    </div>
+                                  )}
+                                  {event.duration && (
+                                    <div>
+                                      <span className="block text-[9.5px] text-[#737373] font-normal">Duration</span>
+                                      <span className="block text-[11px] text-[#111827] font-semibold leading-tight">
+                                        {event.duration}
+                                      </span>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* MONTH VIEW CONTAINER matching month.png */}
+          {activeTab === "Month" && (
+            <div className="w-full overflow-x-auto no-scrollbar">
+              <div className="min-w-[1050px] flex flex-col">
+              {/* Day of Week Header Row */}
+              <div className="grid grid-cols-7 border-b-[0.5px] border-[#B9BEC7] bg-white text-center font-sans font-normal text-[13.5px] text-[#000000]">
+                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayName, idx) => (
+                  <div
+                    key={dayName}
+                    className={`py-[12px] border-r-[0.5px] border-[#B9BEC7] last:border-r-0 ${
+                      dayName === "Mon" ? "font-semibold text-black" : ""
+                    }`}
+                  >
+                    {dayName}
+                  </div>
+                ))}
+              </div>
+
+              {/* Month Calendar Grid (7 columns x N rows) */}
+              <div className="grid grid-cols-7 bg-white">
+                {monthGridData.map((cellDate, idx) => {
+                  const dateStr = formatYYYYMMDD(cellDate);
+                  const isSelected = dateStr === formatYYYYMMDD(currentDate);
+                  const isCurrentMonth = cellDate.getMonth() === currentDate.getMonth();
+
+                  // Format label: e.g. "September 1" or "30"
+                  let label = cellDate.getDate();
+                  if (cellDate.getDate() === 1) {
+                    const mName = cellDate.toLocaleDateString("en-US", { month: "long" });
+                    label = `${mName} 1`;
+                  }
+
+                  // Find events for this cell date
+                  const dayEvents = allEventsDatabase.filter(
+                    (ev) => ev.date === dateStr
+                  );
+
+                  // Construct 3-card stack items list for visual tab deck
+                  let stackEvents = [...dayEvents];
+                  if (dayEvents.length > 0 && stackEvents.length === 1) {
+                    const mainEv = stackEvents[0];
+                    if (mainEv.badgeIcon === "quiz") {
+                      stackEvents = [
+                        {
+                          id: mainEv.id + "-stack-purple",
+                          headerBg: "bg-[#C084FC]",
+                          timeRange: "01.00 - 02.30",
+                          badgeIcon: "live",
+                          badgeType: "Live Session",
+                          cardTitle: "Week 1 : Linux Basic",
+                          detailTitle: "Live Session",
+                          subtitle: "Week 1 - Session 1",
+                          courseName: "Cyber Security Fundamentals",
+                          fullDateText: "Friday, 03 July 2026",
+                          fullTimeText: "01.00 AM - 02.30 AM",
+                          facultyName: "Mr. Arun Kumar",
+                          bgColor: "bg-[#F3E8FF]",
+                          borderColor: "border-[#C084FC]",
+                          textColor: "text-[#7E22CE]",
+                        },
+                        {
+                          id: mainEv.id + "-stack-cyan",
+                          headerBg: "bg-[#06B6D4]",
+                          timeRange: "01.00 - 01.30",
+                          badgeIcon: "meeting",
+                          badgeType: "Tutor Meeting",
+                          cardTitle: "Session 1",
+                          detailTitle: "Tutor Meeting",
+                          subtitle: "Session 1",
+                          courseName: "Cyber Security Fundamentals",
+                          fullDateText: "Friday, 03 July 2026",
+                          fullTimeText: "01.00 AM - 01.30 AM",
+                          facultyName: "Saravanan",
+                          bgColor: "bg-[#CFFAFE]",
+                          borderColor: "border-[#22D3EE]",
+                          textColor: "text-[#0891B2]",
+                        },
+                        mainEv,
+                      ];
+                    } else {
+                      stackEvents = [
+                        {
+                          id: mainEv.id + "-stack-orange",
+                          headerBg: "bg-[#FB923C]",
+                          timeRange: "03.00 - 03.30",
+                          badgeIcon: "quiz",
+                          badgeType: "Recall Quiz",
+                          cardTitle: "Week 1 : Recall Quiz",
+                          detailTitle: "Recall Quiz",
+                          subtitle: "Week 1 - Quiz",
+                          courseName: "Cyber Security Fundamentals",
+                          fullDateText: "Thursday, 02 July 2026",
+                          fullTimeText: "03.00 AM - 03.30 AM",
+                          facultyName: "Mr. Arun Kumar",
+                          bgColor: "bg-[#FFEDD5]",
+                          borderColor: "border-[#FB923C]",
+                          textColor: "text-[#C2410C]",
+                        },
+                        {
+                          id: mainEv.id + "-stack-cyan",
+                          headerBg: "bg-[#06B6D4]",
+                          timeRange: "01.00 - 01.30",
+                          badgeIcon: "meeting",
+                          badgeType: "Tutor Meeting",
+                          cardTitle: "Session 1",
+                          detailTitle: "Tutor Meeting",
+                          subtitle: "Session 1",
+                          courseName: "Cyber Security Fundamentals",
+                          fullDateText: "Friday, 03 July 2026",
+                          fullTimeText: "01.00 AM - 01.30 AM",
+                          facultyName: "Saravanan",
+                          bgColor: "bg-[#CFFAFE]",
+                          borderColor: "border-[#22D3EE]",
+                          textColor: "text-[#0891B2]",
+                        },
+                        mainEv,
+                      ];
+                    }
+                  }
+
+                  // Determine active front event vs peeking tab events
+                  const activeEventId = activeCellCardMap[dateStr] || (stackEvents.length > 0 ? stackEvents[stackEvents.length - 1].id : null);
+                  const activeEv = stackEvents.find((e) => e.id === activeEventId) || (stackEvents.length > 0 ? stackEvents[stackEvents.length - 1] : null);
+                  const peekingEvents = stackEvents.filter((e) => activeEv && e.id !== activeEv.id);
+
+                  return (
+                    <div
+                      key={dateStr + idx}
+                      onClick={() => setCurrentDate(cellDate)}
+                      className={`min-h-[175px] lg:min-h-[190px] border-r-[0.5px] border-b-[0.5px] border-[#B9BEC7] p-[8px] flex flex-col justify-between transition-colors cursor-pointer ${
+                        isSelected ? "bg-[#F7FBEB]" : "bg-white hover:bg-[#F9FAFB]"
+                      }`}
+                    >
+                      {/* Cell Top Header with Date Number */}
+                      <div className="flex justify-end items-center">
+                        {isSelected ? (
+                          <span className="bg-[#9AD84A] text-white font-semibold text-[12px] w-[24px] h-[24px] rounded-[6px] flex items-center justify-center shadow-2xs">
+                            {cellDate.getDate()}
+                          </span>
+                        ) : (
+                          <span
+                            className={`font-sans text-[12px] ${
+                              cellDate.getDate() === 1
+                                ? "font-semibold text-[#000000]"
+                                : isCurrentMonth
+                                ? "text-[#000000] font-normal"
+                                : "text-[#737373] font-normal"
+                            }`}
+                          >
+                            {label}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Stacked Card Deck Container */}
+                      <div className="flex-1 mt-[4px] relative flex flex-col justify-end">
+                        {activeEv && (
+                          <div className="relative w-full max-w-[150px] mx-auto">
+                            {/* Peeking Header Tabs (Stack Layers behind active card) */}
+                            {peekingEvents.map((pEv, pIdx) => {
+                              const topPx = pIdx * 14;
+                              const insetPx = (peekingEvents.length - pIdx) * 4;
+
+                              return (
+                                <div
+                                  key={pEv.id}
+                                  style={{
+                                    top: `${topPx}px`,
+                                    left: `${insetPx}px`,
+                                    right: `${insetPx}px`,
+                                    zIndex: 10 + pIdx,
+                                  }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setActiveCellCardMap((prev) => ({ ...prev, [dateStr]: pEv.id }));
+                                    setSelectedEvent(pEv);
+                                  }}
+                                  title={`Click to switch to ${pEv.cardTitle || pEv.badgeType}`}
+                                  className={`absolute h-[30px] ${pEv.headerBg} rounded-t-[10px] cursor-pointer hover:brightness-110 flex items-start justify-center pt-[3px] shadow-sm transition-all`}
+                                >
+                                  <span className="font-sans text-[10px] font-semibold text-white tracking-wide opacity-95">
+                                    {pEv.timeRange}
                                   </span>
                                 </div>
-                              )}
-                              {event.duration && (
-                                <div>
-                                  <span className="block text-[9.5px] text-[#737373] font-normal">Duration</span>
-                                  <span className="block text-[11px] text-[#111827] font-semibold leading-tight">
-                                    {event.duration}
+                              );
+                            })}
+
+                            {/* Front Active Main Event Card */}
+                            <div
+                              style={{
+                                marginTop: `${peekingEvents.length * 14}px`,
+                                zIndex: 30,
+                              }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedEvent(activeEv);
+                              }}
+                              className={`relative w-full ${activeEv.bgColor} border-[0.7px] ${activeEv.borderColor} rounded-[12px] overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer group`}
+                            >
+                              {/* Card Header Strip */}
+                              <div className={`${activeEv.headerBg} px-[8px] py-[6px] text-center`}>
+                                <span className="block font-sans text-[11px] font-semibold text-white tracking-wide">
+                                  {activeEv.timeRange}
+                                </span>
+                              </div>
+
+                              {/* Card Body */}
+                              <div className="p-[10px] min-h-[85px] flex flex-col justify-between bg-white/70">
+                                <div className="inline-flex items-center gap-[4px] px-[7px] py-[3px] rounded-[6px] bg-white border-[0.5px] border-[#B9BEC7]/60 w-fit shadow-2xs">
+                                  {activeEv.badgeIcon === "live" && (
+                                    <img src={Icons.zoomCircle} alt="Live" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {activeEv.badgeIcon === "quiz" && (
+                                    <img src={Icons.calendarRecall} alt="Quiz" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {activeEv.badgeIcon === "meeting" && (
+                                    <img src={Icons.calendarTutor} alt="Meeting" className="w-[12px] h-[12px]" />
+                                  )}
+                                  {activeEv.badgeIcon === "lab" && (
+                                    <img src={Icons.labs} alt="Lab" className="w-[12px] h-[12px]" />
+                                  )}
+                                  <span className="text-[10px] font-semibold text-[#374151]">
+                                    {activeEv.badgeType}
                                   </span>
                                 </div>
-                              )}
+
+                                <h5 className={`font-sans font-semibold text-[12px] leading-snug mt-[6px] ${activeEv.textColor}`}>
+                                  {activeEv.cardTitle || activeEv.title}
+                                </h5>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+        )}
         </div>
       </div>
-    </div>
 
       {/* RIGHT SIDEBAR PANEL matching event.png */}
       {selectedEvent && (
@@ -747,3 +1219,4 @@ export default function CalendarPage() {
     </div>
   );
 }
+

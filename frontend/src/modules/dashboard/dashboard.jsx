@@ -11,11 +11,13 @@ import { MilestonePipeline } from "./components/milestone-pipeline.jsx";
 import { LearningConsistencyHeatmap, formatDuration } from "./components/learning-consistency.jsx";
 import { TopStudentsCard } from "./components/top-students.jsx";
 import { RecentActivityCard } from "./components/recent-activity.jsx";
+import { FirstUserDashboard } from "./components/first-user-dashboard.jsx";
 import { useDashboard } from "./hooks/use-dashboard.js";
 import { Icons } from "../../assets/icons/icons.js";
 
 export const DashboardPage = () => {
   const { data } = useDashboard();
+  const [isFirstTimeUser, setIsFirstTimeUser] = useState(false);
   const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
   const outletCtx = useOutletContext();
   const isProfileOpen = outletCtx?.isProfileOpen || false;
@@ -27,8 +29,39 @@ export const DashboardPage = () => {
 
   return (
     <div className="flex flex-col gap-[24px] w-full max-w-full min-w-0 pb-[36px] overflow-x-hidden">
-      {/* Welcome Section */}
-      <WelcomeBanner userName={data.user.name} />
+      {/* Dashboard State Switcher (API Backend Simulation) */}
+      <div className="w-full px-[16px] py-[10px] bg-[#F9FAFB] border border-[#E5E7EB] rounded-[12px] flex flex-wrap items-center justify-between gap-[8px]">
+        <span className="font-sans font-medium text-[13px] text-[#374151]">
+          Dashboard State Switcher (API Backend Simulation):
+        </span>
+        <div className="flex items-center gap-[6px]">
+          <button
+            type="button"
+            onClick={() => setIsFirstTimeUser(false)}
+            className={`px-[12px] py-[4px] rounded-[6px] font-sans text-[12px] font-medium transition-colors cursor-pointer ${
+              !isFirstTimeUser ? "bg-[#9AD84A] text-white" : "bg-white border border-[#E5E7EB] text-[#4B5563]"
+            }`}
+          >
+            Regular Dashboard (Enrolled User)
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsFirstTimeUser(true)}
+            className={`px-[12px] py-[4px] rounded-[6px] font-sans text-[12px] font-medium transition-colors cursor-pointer ${
+              isFirstTimeUser ? "bg-[#9AD84A] text-white" : "bg-white border border-[#E5E7EB] text-[#4B5563]"
+            }`}
+          >
+            First Time User (New User Locked State)
+          </button>
+        </div>
+      </div>
+
+      {isFirstTimeUser ? (
+        <FirstUserDashboard />
+      ) : (
+        <>
+          {/* Welcome Section */}
+          <WelcomeBanner userName={data.user.name} />
 
      
       <div className="w-full min-w-0">
@@ -276,6 +309,8 @@ export const DashboardPage = () => {
           <RecentActivityCard />
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 };

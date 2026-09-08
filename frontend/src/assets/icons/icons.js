@@ -58,6 +58,16 @@ import NotesIcon from "./notes.svg";
 import NotificationBellPingIcon from "./notification-bell-ping.svg";
 import OpenDropdownIcon from "./open-dropdown.svg";
 import ProfileIcon from "./profile-icon.svg";
+import AvatarProfileIcon from "./avatar-profile.svg";
+import GitbookIcon from "./gitbook.svg";
+import AnalyticsIcon from "./analytics.svg";
+import ChartIcon from "./chart.svg";
+import ChartUpIcon from "./chart-up.svg";
+import PuzzleIcon from "./puzzle.svg";
+import TrophyBlackIcon from "./trophy-black.svg";
+import ClockNoActivityIcon from "./clock-no-activity.svg";
+import GetStartedIcon from "./get-started.svg";
+import PlusIcon from "./plus.svg";
 import SearchIcon from "./search-icon.svg";
 import SearchBoldIcon from "./search-bold.svg";
 import TodoIcon from "./todo.svg";
@@ -356,6 +366,16 @@ export const Icons = {
   user: UserIcon,
   clock: ClockIcon,
   menuCollapse: MenuCollapseIcon,
+  getStarted: GetStartedIcon,
+  plus: PlusIcon,
+  avatarProfile: AvatarProfileIcon,
+  gitbook: GitbookIcon,
+  analytics: AnalyticsIcon,
+  chart: ChartIcon,
+  chartUp: ChartUpIcon,
+  puzzle: PuzzleIcon,
+  trophyBlack: TrophyBlackIcon,
+  clockNoActivity: ClockNoActivityIcon,
 };
 
 export default Icons;

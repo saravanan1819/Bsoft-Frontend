@@ -55,8 +55,12 @@ const FacultyLoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate login and navigate to dashboard
-    navigate("/dashboard");
+    const hasLoggedIn = localStorage.getItem("bsoft_has_logged_in");
+    if (hasLoggedIn === "true") {
+      navigate("/dashboard");
+    } else {
+      navigate("/welcome");
+    }
   };
 
   return (
@@ -76,7 +80,7 @@ const FacultyLoginPage = () => {
           {/* Main Content Form */}
           <div className="w-full my-auto py-4">
             <div className="mb-6">
-              <h1 className="text-[26px] sm:text-[30px] font-medium text-[#000000] mb-2 tracking-tight">
+              <h1 className="text-[26px] sm:text-[30px] font-medium text-[#000000] mb-2">
                 Welcome back !
               </h1>
               <p className="text-[#737373] text-[15px] sm:text-[18px] font-normal sm:whitespace-nowrap">
@@ -84,7 +88,7 @@ const FacultyLoginPage = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} noValidate className="space-y-4">
               {/* Email Field */}
               <div>
                 <label
@@ -99,7 +103,6 @@ const FacultyLoginPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  required
                   className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-[#000000] placeholder:text-[#737373] text-[16px] font-normal focus:outline-none focus:border-[#9BD94A] focus:ring-1 focus:ring-[#9BD94A] transition-all bg-white"
                 />
               </div>
@@ -119,7 +122,6 @@ const FacultyLoginPage = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
-                    required
                     className="w-full px-3.5 py-2.5 pr-10 rounded-xl border border-gray-200 text-[#000000] placeholder:text-[#737373] text-[16px] font-normal focus:outline-none focus:border-[#9BD94A] focus:ring-1 focus:ring-[#9BD94A] transition-all bg-white"
                   />
                   <button
