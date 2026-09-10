@@ -1461,61 +1461,10 @@ export default function SettingsPage() {
       {/* TAB CONTENT 4: CUSTOMIZE */}
       {activeTab === "Customize" && (
         <div className="space-y-6 w-full">
-          <div className="border border-[#B9BEC7] rounded-[16px] bg-white shadow-xs p-6 space-y-6">
-            <h2 className="text-[16px] font-medium text-[#000000] border-b pb-4 border-[#B9BEC7] tracking-normal" style={{ letterSpacing: "0px" }}>
-              Appearance & Layout Settings
-            </h2>
-
-            <div className="space-y-5">
-              <div>
-                <label className="block text-[16px] font-medium text-[#000000] mb-3 tracking-normal" style={{ letterSpacing: "0px" }}>
-                  Interface Theme
-                </label>
-                <div className="grid grid-cols-3 gap-3 max-w-md">
-                  <button
-                    type="button"
-                    onClick={() => setCustomizeState({ ...customizeState, theme: "light" })}
-                    className={`p-3 text-[16px] font-medium rounded-xl border flex flex-col items-center gap-2 cursor-pointer transition-colors ${
-                      customizeState.theme === "light" ? "border-[#9AD84A] bg-[#F4FCE3] text-[#000000]" : "border-[#B9BEC7] bg-white text-[#000000]"
-                    }`}
-                    style={{ letterSpacing: "0px" }}
-                  >
-                    <span>☀️ Light</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setCustomizeState({ ...customizeState, theme: "dark" })}
-                    className={`p-3 text-[16px] font-medium rounded-xl border flex flex-col items-center gap-2 cursor-pointer transition-colors ${
-                      customizeState.theme === "dark" ? "border-[#9AD84A] bg-gray-900 text-white" : "border-[#B9BEC7] bg-white text-[#000000]"
-                    }`}
-                    style={{ letterSpacing: "0px" }}
-                  >
-                    <span>🌙 Dark</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setCustomizeState({ ...customizeState, theme: "system" })}
-                    className={`p-3 text-[16px] font-medium rounded-xl border flex flex-col items-center gap-2 cursor-pointer transition-colors ${
-                      customizeState.theme === "system" ? "border-[#9AD84A] bg-[#F4FCE3] text-[#000000]" : "border-[#B9BEC7] bg-white text-[#000000]"
-                    }`}
-                    style={{ letterSpacing: "0px" }}
-                  >
-                    <span>💻 System</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-[#B9BEC7] flex items-center justify-between">
-                <div>
-                  <h3 className="text-[16px] font-medium text-[#000000] tracking-normal" style={{ letterSpacing: "0px" }}>Compact Dashboard View</h3>
-                  <p className="text-[16px] font-medium text-[#000000] tracking-normal mt-0.5" style={{ letterSpacing: "0px" }}>Reduce spacing and padding across cards.</p>
-                </div>
-                <ToggleSwitch
-                  checked={customizeState.compactMode}
-                  onChange={(val) => setCustomizeState({ ...customizeState, compactMode: val })}
-                />
-              </div>
-            </div>
+          <div className="border border-[#B9BEC7] rounded-[16px] bg-white shadow-xs p-12 text-center flex flex-col items-center justify-center min-h-[280px]">
+            <p className="text-[18px] font-medium text-[#111827] tracking-normal" style={{ letterSpacing: "0px" }}>
+              Update soon
+            </p>
           </div>
         </div>
       )}
