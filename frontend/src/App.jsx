@@ -25,6 +25,7 @@ import HandsOnLabsPage from "./modules/hands-on-labs/hands-on-labs.jsx";
 import AttendancePage from "./modules/attendance/attendance.jsx";
 import CalendarPage from "./modules/calendar/calendar.jsx";
 import LabsPage from "./modules/dashboard/dashboard";
+import SettingsPage from "./modules/settings/settings.jsx";
 
 const PlaceholderPage = ({ title }) => (
   <div className="flex flex-col items-center justify-center h-full min-h-[60vh] border-2 border-dashed border-gray-200 rounded-xl bg-gray-50/50">
@@ -81,7 +82,7 @@ function App() {
           {/* General Section */}
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="feedback-report" element={<DummyPage title="Feedback & Report" />} />
-          <Route path="settings" element={<DummyPage title="Settings" />} />
+          <Route path="settings" element={<SettingsPage />} />
           <Route path="help-support" element={<DummyPage title="Help & Support" />} />
 
           {/* Account Section */}

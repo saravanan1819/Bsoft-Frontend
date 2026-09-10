@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "country-flag-icons": "^1.6.20",
     "pdfjs-dist": "^6.3.289",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-international-phone": "^4.8.0",
     "react-router-dom": "^7.18.1",
     "recharts": "^3.10.0",
     "tailwindcss": "^4.3.3"

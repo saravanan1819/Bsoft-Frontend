@@ -56,6 +56,11 @@ import MilestoneLockedIcon from "./milestone-locked.svg";
 import MyProgressIcon from "./my-progress.svg";
 import NotesIcon from "./notes.svg";
 import NotificationBellPingIcon from "./notification-bell-ping.svg";
+import NotificationBellIcon from "./notification-bell.svg";
+import MyProfileIcon from "./my-profile.svg";
+import AccountSettingIcon from "./account-setting.svg";
+import SecurityIcon from "./security.svg";
+import EmojiIcon from "./emoji.svg";
 import OpenDropdownIcon from "./open-dropdown.svg";
 import ProfileIcon from "./profile-icon.svg";
 import AvatarProfileIcon from "./avatar-profile.svg";
@@ -83,6 +88,7 @@ import TerminalIcon from "./terminal.svg";
 
 // Recently added icons
 import DashboardEditIcon from "./dashboard-edit.svg";
+import DashboardSquareEditIcon from "./dashboard-square-edit.svg";
 import FirstPlaceIcon from "./first-place.svg";
 import SecondPlaceIcon from "./second-place.svg";
 import ThirdPlaceIcon from "./third-place.svg";
@@ -91,6 +97,9 @@ import StudentsIcon from "./students.svg";
 import Todo2Icon from "./todo2.svg";
 import UserGroupIcon from "./user-group.svg";
 import ViewIcon from "./view.svg";
+import UsernameIcon from "./username.svg";
+import MailIcon from "./mail.svg";
+import UserStatusIcon from "./user-status.svg";
 
 // New activity & badge icons
 import BashOrangeIcon from "./bash-orange.svg";
@@ -182,8 +191,27 @@ import CalendarTutorIcon from "./calender-tutor.svg";
 import CalendarRecallIcon from "./calender-recall.svg";
 import CalendarBashIcon from "./calender-bash.svg";
 import NoItemIcon from "./no-item.svg";
+import PenIcon from "./pen.svg";
+import CalendarDropdownIcon from "./calendar-dropdown.svg";
+import SettingsStudentIcon from "./settings-student.svg";
+import SettingsSkillsIcon from "./settings-skills.svg";
+import SettingsCertificateIcon from "./settings-certificate.svg";
+import SettingsLinksIcon from "./settings-links.svg";
+import WindowsOldIcon from "./windows-old.svg";
+import LinuxIcon from "./linux.svg";
+import InAppIcon from "./in-app.svg";
+import SmsCodeIcon from "./sms-code.svg";
 
 export const Icons = {
+  inApp: InAppIcon,
+  smsCode: SmsCodeIcon,
+  windows: WindowsOldIcon,
+  linux: LinuxIcon,
+  settingsStudent: SettingsStudentIcon,
+  settingsSkills: SettingsSkillsIcon,
+  settingsCertificate: SettingsCertificateIcon,
+  settingsLinks: SettingsLinksIcon,
+  calendarDropdown: CalendarDropdownIcon,
   noItem: NoItemIcon,
   calendarTutor: CalendarTutorIcon,
   calendarRecall: CalendarRecallIcon,
@@ -281,6 +309,11 @@ export const Icons = {
 
   // UI
   notification: NotificationBellPingIcon,
+  notificationBell: NotificationBellIcon,
+  myProfile: MyProfileIcon,
+  accountSetting: AccountSettingIcon,
+  security: SecurityIcon,
+  emoji: EmojiIcon,
   profile: ProfileIcon,
   search: SearchIcon,
   searchBold: SearchBoldIcon,
@@ -302,6 +335,7 @@ export const Icons = {
 
   // Recently added icons
   dashboardEdit: DashboardEditIcon,
+  dashboardSquareEdit: DashboardSquareEditIcon,
   firstPlace: FirstPlaceIcon,
   secondPlace: SecondPlaceIcon,
   thirdPlace: ThirdPlaceIcon,
@@ -310,6 +344,9 @@ export const Icons = {
   todo2: Todo2Icon,
   userGroup: UserGroupIcon,
   view: ViewIcon,
+  username: UsernameIcon,
+  mail: MailIcon,
+  userStatus: UserStatusIcon,
 
   // Activity & Badge Icons
   bashOrange: BashOrangeIcon,
@@ -376,6 +413,7 @@ export const Icons = {
   puzzle: PuzzleIcon,
   trophyBlack: TrophyBlackIcon,
   clockNoActivity: ClockNoActivityIcon,
+  pen: PenIcon,
 };
 
 export default Icons;
