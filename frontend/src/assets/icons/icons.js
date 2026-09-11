@@ -414,6 +414,7 @@ export const Icons = {
   trophyBlack: TrophyBlackIcon,
   clockNoActivity: ClockNoActivityIcon,
   pen: PenIcon,
+  alertCircle: AlertCircleIcon,
 };
 
 export default Icons;

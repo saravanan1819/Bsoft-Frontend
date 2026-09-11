@@ -2,15 +2,15 @@ import React from "react";
 import { Icons } from "../../assets/icons/icons";
 
 export const ProfileSidebar = ({ isOpen, onClose }) => {
-  // Weekly learning activity data for chart
+  // Weekly learning activity data for chart matching design screenshot
   const weeklyData = [
-    { day: "Sun", height: "18%", color: "bg-[#D1D5DB]" },
-    { day: "Mon", height: "22%", color: "bg-[#D1D5DB]" },
-    { day: "Tue", height: "48%", color: "bg-[#D1D5DB]" },
-    { day: "Wed", height: "78%", color: "bg-[#D1D5DB]" },
-    { day: "Thu", height: "65%", color: "bg-[#9AD84A]" }, // Active / highlighted day
-    { day: "Fri", height: "0%", color: "bg-[#D1D5DB]" },
-    { day: "Sat", height: "0%", color: "bg-[#D1D5DB]" },
+    { day: "Sun", height: "18%", color: "bg-[#BDBDBD]" },
+    { day: "Mon", height: "16%", color: "bg-[#BDBDBD]" },
+    { day: "Tue", height: "45%", color: "bg-[#BDBDBD]" },
+    { day: "Wed", height: "78%", color: "bg-[#BDBDBD]" },
+    { day: "Thu", height: "68%", color: "bg-[#9AD84A]" }, // Active / highlighted day
+    { day: "Fri", height: "0%", color: "bg-transparent" },
+    { day: "Sat", height: "0%", color: "bg-transparent" },
   ];
 
   return (
@@ -77,7 +77,7 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
             {/* Mail */}
             <button
               type="button"
-              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-gray-600 cursor-pointer"
+              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-[#000000] cursor-pointer"
               title="Email"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
             {/* Phone */}
             <button
               type="button"
-              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-gray-600 cursor-pointer"
+              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-[#000000] cursor-pointer"
               title="Phone"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
             {/* LinkedIn */}
             <button
               type="button"
-              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-gray-600 cursor-pointer"
+              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-[#000000] cursor-pointer"
               title="LinkedIn"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
             {/* GitHub */}
             <button
               type="button"
-              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-gray-600 cursor-pointer"
+              className="w-[36px] h-[36px] rounded-full border border-[#B9BEC7] bg-[#F9FAFB] hover:bg-gray-100 transition-colors flex items-center justify-center text-[#000000] cursor-pointer"
               title="GitHub"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -135,12 +135,10 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
         <div className="bg-white rounded-[20px] border border-[#B9BEC7] p-[18px] shadow-xs flex flex-col">
           <div className="flex items-center gap-[6px] text-[#000000] font-normal text-[14px] font-sans">
             <span>Batch Rank</span>
-            <span className="w-4 h-4 rounded-full border border-[#B9BEC7] text-[#737373] text-[10px] flex items-center justify-center font-bold">
-              i
-            </span>
+            <img src={Icons.alertCircle} alt="Info" className="w-[14px] h-[14px] cursor-help brightness-0 opacity-100" />
           </div>
 
-          <div className="flex items-baseline gap-[10px] mt-[10px]">
+          <div className="flex items-baseline gap-[10px] mt-[18px]">
             <span className="font-sans font-bold text-[34px] text-gray-900 leading-none">
               #4
             </span>
@@ -161,12 +159,10 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
         <div className="bg-white rounded-[20px] border border-[#B9BEC7] p-[18px] shadow-xs flex flex-col">
           <div className="flex items-center gap-[6px] text-[#000000] font-normal text-[14px] font-sans">
             <span>University Rank</span>
-            <span className="w-4 h-4 rounded-full border border-[#B9BEC7] text-[#737373] text-[10px] flex items-center justify-center font-bold">
-              i
-            </span>
+            <img src={Icons.alertCircle} alt="Info" className="w-[14px] h-[14px] cursor-help brightness-0 opacity-100" />
           </div>
 
-          <div className="flex items-baseline gap-[10px] mt-[10px]">
+          <div className="flex items-baseline gap-[10px] mt-[18px]">
             <span className="font-sans font-bold text-[34px] text-gray-900 leading-none">
               #45
             </span>
@@ -189,14 +185,12 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-[6px] text-[#000000] font-normal text-[14px] font-sans">
               <span>Learning Time</span>
-              <span className="w-4 h-4 rounded-full border border-[#B9BEC7] text-[#737373] text-[10px] flex items-center justify-center font-bold">
-                i
-              </span>
+              <img src={Icons.alertCircle} alt="Info" className="w-[14px] h-[14px] cursor-help brightness-0 opacity-100" />
             </div>
 
             <button
               type="button"
-              className="w-[28px] h-[28px] rounded-full border border-[#B9BEC7] bg-white hover:bg-gray-100 transition-colors flex items-center justify-center text-gray-600 cursor-pointer"
+              className="w-[28px] h-[28px] rounded-full border border-[#B9BEC7] bg-white hover:bg-gray-100 transition-colors flex items-center justify-center text-[#000000] cursor-pointer"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 8a2 2 0 100-4 2 2 0 000 4zm0 6a2 2 0 100-4 2 2 0 000 4zm0 6a2 2 0 100-4 2 2 0 000 4z" />
@@ -209,36 +203,34 @@ export const ProfileSidebar = ({ isOpen, onClose }) => {
             <h4 className="font-sans font-bold text-[34px] text-gray-900 leading-tight">
               4h 37m
             </h4>
-            <p className="text-[14px] text-[#737373] font-normal font-sans">
+            <p className="text-[14px] text-[#71717A] font-light font-sans">
               Today
             </p>
-            <p className="text-[11px] text-[#737373] font-normal font-sans mt-[4px]">
+            <p className="text-[8px] text-[#71717A] font-light font-sans mt-[4px]">
               You studied 45 minutes longer than yesterday.
             </p>
           </div>
 
-          {/* Bar Chart Container */}
-          <div className="bg-[#F3F4F6] rounded-[16px] p-[16px] mt-[10px] flex flex-col justify-end">
-            <div className="h-[100px] flex items-end justify-between px-[6px]">
+          {/* Bar Chart Container matching screenshot layout */}
+          <div className="w-full mt-[10px] flex flex-col gap-[8px]">
+            {/* Gray Box for Bars Only */}
+            <div className="bg-[#F0F1F3] border border-[#B9BEC7] rounded-[16px] h-[120px] px-[16px] flex items-end justify-between overflow-hidden">
               {weeklyData.map((item) => (
-                <div key={item.day} className="flex flex-col items-center gap-[8px] w-[24px]">
-                  {/* Bar */}
-                  <div className="w-[20px] h-[76px] flex items-end justify-center">
-                    <div
-                      style={{ height: item.height }}
-                      className={`w-full rounded-t-[8px] transition-all duration-500 ${item.color}`}
-                    />
-                  </div>
+                <div key={item.day} className="w-[24px] h-full flex items-end justify-center">
+                  <div
+                    style={{ height: item.height }}
+                    className={`w-full rounded-t-[8px] transition-all duration-500 ${item.color}`}
+                  />
                 </div>
               ))}
             </div>
 
-            {/* Days Labels Row */}
-            <div className="flex items-center justify-between px-[6px] mt-[8px]">
+            {/* Day Labels Row (Outside the Gray Box) */}
+            <div className="flex items-center justify-between px-[16px]">
               {weeklyData.map((item) => (
                 <span
                   key={item.day}
-                  className="w-[24px] text-center text-[12px] font-sans font-medium text-gray-500"
+                  className="w-[24px] text-center text-[12px] font-sans font-light text-[#000000]"
                 >
                   {item.day}
                 </span>
