@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "./sidebar";
+import ProfileSidebar from "./profile-sidebar";
 import { Icons } from "../../assets/icons/icons";
 
 import SearchBar from "../shared/search-bar";
@@ -65,7 +66,7 @@ export const AppLayout = () => {
                 <SearchBar />
 
                 {/* Notification Bell */}
-                <button className="w-10 h-10 rounded-full bg-white border-[0.4px] border-[#B9BEC7] shadow-[0px_2px_2px_0px_rgba(0,0,0,0.08)] flex items-center justify-center cursor-pointer hover:opacity-85 transition-opacity">
+                <button className="w-10 h-10 rounded-full bg-white border border-[#B9BEC7] shadow-[0px_2px_2px_0px_rgba(0,0,0,0.08)] flex items-center justify-center cursor-pointer hover:opacity-85 transition-opacity">
                   <img src={Icons.notification || "/notification-bell-ping.svg"} alt="Notifications" className="w-[20px] h-[20px]" />
                 </button>
 
@@ -76,13 +77,15 @@ export const AppLayout = () => {
                 <button
                   type="button"
                   onClick={() => setIsProfileOpen((prev) => !prev)}
-                  className="relative w-10 h-10 rounded-full border-[0.4px] border-[#B9BEC7] bg-primary overflow-hidden flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-[#9AD84A] transition-all"
+                  className="relative w-10 h-10 rounded-full border border-[#B9BEC7] bg-white p-[2px] flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-[#9AD84A] transition-all"
                 >
-                  <img 
-                    src={Icons.profile || "/hero.png"} 
-                    alt="Profile" 
-                    className="min-w-[40px] min-h-[31px] object-cover translate-x-[0px] translate-y-[1px]" 
-                  />
+                  <div className="w-full h-full rounded-full overflow-hidden bg-[#9AD84A] flex items-center justify-center">
+                    <img 
+                      src={Icons.profile || "/hero.png"} 
+                      alt="Profile" 
+                      className="min-w-[34px] min-h-[26px] object-cover translate-y-[1px]" 
+                    />
+                  </div>
                 </button>
               </div>
             </header>
@@ -98,74 +101,7 @@ export const AppLayout = () => {
       </div>
 
       {/* Profile Sidebar Drawer */}
-      <div
-        className={`transition-all duration-300 ease-in-out bg-[#FAFAFA] border-t-[0.5px] border-l-[0.5px] border-r-[0.5px] border-[#B9BEC7] rounded-t-[24px] overflow-hidden flex flex-col ${
-          isProfileOpen
-            ? "w-[300px] sm:w-[360px] opacity-100 ml-[8px]"
-            : "w-0 opacity-0 pointer-events-none"
-        }`}
-      >
-        {/* Profile Sidebar Header */}
-        <div className="h-[68px] flex items-center justify-between px-[24px] border-b-[0.5px] border-[#B9BEC7] bg-[#FAFAFA] shrink-0">
-          <h2 className="font-sans font-semibold text-[18px] text-black">Profile</h2>
-          <button
-            type="button"
-            onClick={() => setIsProfileOpen(false)}
-            className="flex items-center gap-[6px] px-[12px] py-[6px] rounded-full border-[0.5px] border-[#B9BEC7] bg-white text-[13px] font-sans font-medium text-black hover:bg-gray-100 transition-colors cursor-pointer"
-          >
-            <span>✕</span>
-            <span>Close</span>
-          </button>
-        </div>
-
-        {/* Profile Sidebar Content Body */}
-        <div className="flex-1 overflow-y-auto p-[24px] flex flex-col justify-between gap-[20px]">
-          <div className="flex flex-col gap-[20px]">
-            {/* User Info Header */}
-            <div className="flex items-center gap-[16px] p-[16px] bg-white rounded-[16px] border-[0.5px] border-[#B9BEC7]">
-              <div className="w-[50px] h-[50px] rounded-full border border-[#B9BEC7] overflow-hidden shrink-0">
-                <img src={Icons.profile || "/hero.png"} alt="Jabez" className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h3 className="font-sans font-bold text-[16px] text-black">Jabez</h3>
-                <p className="font-sans text-[13px] text-[#737373]">jabez@bsoft.edu</p>
-              </div>
-            </div>
-
-            {/* Quick Details / Stats */}
-            <div className="flex flex-col gap-[12px]">
-              <span className="font-sans text-[12px] uppercase font-semibold text-[#737373]">Account & Activity</span>
-              <div className="flex flex-col gap-[8px]">
-                <div className="flex justify-between items-center p-[12px] bg-white rounded-[12px] border-[0.5px] border-[#B9BEC7] text-[14px]">
-                  <span className="text-[#737373]">Role</span>
-                  <span className="font-semibold text-black">Student</span>
-                </div>
-                <div className="flex justify-between items-center p-[12px] bg-white rounded-[12px] border-[0.5px] border-[#B9BEC7] text-[14px]">
-                  <span className="text-[#737373]">Current Rank</span>
-                  <span className="font-semibold text-black">Top 5%</span>
-                </div>
-                <div className="flex justify-between items-center p-[12px] bg-white rounded-[12px] border-[0.5px] border-[#B9BEC7] text-[14px]">
-                  <span className="text-[#737373]">Streak</span>
-                  <span className="font-semibold text-black">🔥 14 Days</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Log Out Button */}
-          <button
-            type="button"
-            onClick={() => {
-              setIsProfileOpen(false);
-              navigate("/login");
-            }}
-            className="w-full flex items-center justify-center gap-2 p-[12px] bg-[#FFF2F2] hover:bg-[#FFE5E5] text-[#E53E3E] border-[0.5px] border-[#FEB2B2] rounded-[12px] font-sans font-medium text-[14px] transition-colors cursor-pointer"
-          >
-            <img src={Icons.logout} alt="Log Out" className="w-[18px] h-[18px]" />
-            <span>Log Out</span>
-          </button>
-        </div>
-      </div>
+      <ProfileSidebar isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
 
       {/* Right Sidebar */}
       {!isOnboardingPage && (
